@@ -1,0 +1,10 @@
+{
+  "name": "VTech Facades",
+  "short_name": "VTech",
+  "description": "Authorized Fundermax partner for exterior wall cladding, balcony panels and facade systems in South India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f1ec",
+  "theme_color": "#254985",
+  "lang": "en-IN"
+}

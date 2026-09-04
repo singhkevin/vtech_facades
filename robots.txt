@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vtechfacades.com/sitemap.xml
+Host: https://vtechfacades.com
