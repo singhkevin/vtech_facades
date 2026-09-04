@@ -1,0 +1,5 @@
+# Minimal config for the inquire Edge Function.
+# Project URL and keys live in the Supabase dashboard, not here.
+
+[functions.submit-lead]
+verify_jwt = true

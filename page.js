@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById("mobile-nav");
 
   if (header) {
-    const onScroll = () => header.classList.toggle("is-solid", window.scrollY > 40);
+    const onScroll = () => header.classList.toggle("is-solid", window.scrollY > 48);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }

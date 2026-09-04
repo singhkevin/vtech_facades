@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>VTech Facades | Exterior Cladding &amp; Facade Systems, Bengaluru</title>
   <meta name="description" content="VTech Facades engineers exterior cladding and facade systems in Bengaluru: Fundermax rainscreens, balcony panels, architectural finishes, and bespoke envelopes.">
   <meta name="theme-color" content="#254985">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=para6">
+  <link rel="preload" as="image" href="images/hero-01-envelopes.png">
 </head>
 <body>
   <div class="curtain" id="curtain" aria-hidden="true">
@@ -37,7 +38,8 @@
         <a href="contact.html" data-cursor="hover"><i>03</i> Contact</a>
       </nav>
       <div class="header-end">
-        <a class="inquire" href="contact.html" data-cursor="hover">Inquire</a>
+        <button type="button" class="spec-pill" id="open-spec-nav" data-cursor="hover">Spec box <b class="spec-count" id="spec-count">0</b></button>
+        <button type="button" class="inquire" data-inquire-open data-source-cta="header" data-cursor="hover">Inquire</button>
         <button class="nav-lines" id="nav-toggle" type="button" aria-label="Menu"><span></span><span></span></button>
       </div>
     </div>
@@ -54,7 +56,7 @@
       <div class="hero-slides" id="hero-slides">
         <article class="hero-slide is-active" data-slide="0">
           <div class="slide-media">
-            <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2560&q=85')"></div>
+            <div class="slide-img" style="background-image:url('images/hero-01-envelopes.png')"></div>
           </div>
           <div class="slide-shade"></div>
           <div class="slide-copy">
@@ -65,7 +67,7 @@
         </article>
         <article class="hero-slide" data-slide="1">
           <div class="slide-media">
-            <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=2560&q=85')"></div>
+            <div class="slide-img" style="background-image:url('images/hero-02-sculptural.png')"></div>
           </div>
           <div class="slide-shade"></div>
           <div class="slide-copy">
@@ -76,7 +78,7 @@
         </article>
         <article class="hero-slide" data-slide="2">
           <div class="slide-media">
-            <div class="slide-img" style="background-image:url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2560&q=85')"></div>
+            <div class="slide-img" style="background-image:url('images/hero-03-kinetic.png')"></div>
           </div>
           <div class="slide-shade"></div>
           <div class="slide-copy">
@@ -110,28 +112,79 @@
     </section>
 
     <section class="parallax" id="parallax">
+      <div class="parallax-grid" aria-hidden="true"></div>
       <div class="parallax-vignette" aria-hidden="true"></div>
       <p class="chap-label reveal-label"><span>Intelligence</span> At rest</p>
-      <div class="aura-word" aria-hidden="true">VTECH</div>
+      <div class="aura-mark" aria-hidden="true">
+        <img src="images/vtech-logo.png" alt="" width="1024" height="995" decoding="async">
+      </div>
       <div class="parallax-stack">
         <div class="p-row p1">
-          <div class="p-line">
-            <span class="p-orbit" aria-hidden="true"></span>
-            <span class="p-word"><b>precision</b></span>
+          <div class="p-claim">
+            <div class="p-line">
+              <span class="p-orbit" aria-hidden="true"></span>
+              <span class="p-word"><b>precision</b></span>
+            </div>
+            <div class="p-meta">
+              <i>engineered to millimetre tolerances</i>
+              <span class="p-spec">±1.5 mm</span>
+            </div>
+            <span class="p-ticks" aria-hidden="true"></span>
           </div>
-          <i>engineered to millimetre tolerances</i>
+          <figure class="p-plate">
+            <div class="p-plate-frame">
+              <span class="vf vf-tl"></span>
+              <span class="vf vf-tr"></span>
+              <span class="vf vf-bl"></span>
+              <span class="vf vf-br"></span>
+              <div class="p-plate-img" style="background-image:url('images/project-01.jpeg')"></div>
+            </div>
+            <figcaption class="visually-hidden">Jointed rainscreen volumes, aligned to millimetre tolerances.</figcaption>
+          </figure>
         </div>
         <div class="p-row p2">
-          <div class="p-line">
-            <span class="p-word"><b>performance</b></span>
+          <div class="p-claim">
+            <div class="p-line">
+              <span class="p-word"><b>performance</b></span>
+            </div>
+            <div class="p-meta">
+              <i>thermal, acoustic &amp; structural excellence</i>
+              <span class="p-spec">U 0.78</span>
+            </div>
+            <span class="p-ticks" aria-hidden="true"></span>
           </div>
-          <i>thermal, acoustic &amp; structural excellence</i>
+          <figure class="p-plate">
+            <div class="p-plate-frame">
+              <span class="vf vf-tl"></span>
+              <span class="vf vf-tr"></span>
+              <span class="vf vf-bl"></span>
+              <span class="vf vf-br"></span>
+              <div class="p-plate-img" style="background-image:url('images/project-15.jpeg')"></div>
+            </div>
+            <figcaption class="visually-hidden">Vertical fins and glazing — daylight held, cooling load released.</figcaption>
+          </figure>
         </div>
         <div class="p-row p3">
-          <div class="p-line">
-            <span class="p-word"><b>longevity</b></span>
+          <div class="p-claim">
+            <div class="p-line">
+              <span class="p-word"><b>longevity</b></span>
+            </div>
+            <div class="p-meta">
+              <i>envelopes built to outlast their buildings</i>
+              <span class="p-spec">50-yr</span>
+            </div>
+            <span class="p-ticks" aria-hidden="true"></span>
           </div>
-          <i>envelopes built to outlast their buildings</i>
+          <figure class="p-plate">
+            <div class="p-plate-frame">
+              <span class="vf vf-tl"></span>
+              <span class="vf vf-tr"></span>
+              <span class="vf vf-bl"></span>
+              <span class="vf vf-br"></span>
+              <div class="p-plate-img" style="background-image:url('images/project-14.jpeg')"></div>
+            </div>
+            <figcaption class="visually-hidden">Installed mixed-material skin with jali screens, built to last.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -148,7 +201,6 @@
           <div class="works-orbit"></div>
           <div class="works-ticks"></div>
         </div>
-        <div class="works-vignette" aria-hidden="true"></div>
         <div class="works-viewfinder" aria-hidden="true">
           <span class="vf vf-tl"></span>
           <span class="vf vf-tr"></span>
@@ -253,8 +305,358 @@
       </div>
     </section>
 
+    <section class="fmax-dominant" id="fundermax">
+      <!-- Ambient kinetic backdrop & watermark -->
+      <div class="fmax-stage-bg" aria-hidden="true">
+        <div class="fmax-grid-lines"></div>
+        <div class="fmax-ambient-glow"></div>
+        <div class="fmax-watermark">FUNDERMAX</div>
+      </div>
+
+      <!-- LAYER 1: MONUMENTAL CO-BRAND MARQUEE & STRENGTHS -->
+      <header class="fmax-monument">
+        <div class="fmax-badge-row">
+          <span class="fmax-pill fmax-pill-live">
+            <span class="fmax-live-dot" aria-hidden="true"></span>
+            Authorized Partner · South India
+          </span>
+          <span class="fmax-pill fmax-pill-subtle">
+            Austria 1890 ➔ Bengaluru 2026
+          </span>
+          <span class="fmax-pill fmax-pill-count">
+            15+ Years · 15,000+ Projects in India
+          </span>
+        </div>
+
+        <div class="fmax-hero-lockup">
+          <div class="fmax-brand-block">
+            <!-- Official Fundermax Partner Logo -->
+            <img class="fmax-partner-logo-img" src="images/fundermax-partner-logo-white.png" alt="Fundermax — For you to create" width="934" height="214">
+          </div>
+          <div class="fmax-partner-cross">
+            <span>in partnership with</span>
+            <strong>VTech Facades</strong>
+          </div>
+        </div>
+
+        <div class="fmax-lead-row">
+          <h2 class="fmax-headline">
+            Austrian material science.<br>
+            <span>Impervious to Indian monsoons.</span>
+          </h2>
+          <p class="fmax-sublead">
+            High-pressure architectural laminates engineered with double-hardened acrylic PUR resin. Built to endure intense UV radiation, sudden thermal shocks from −80°C to +80°C, and heavy tropical rain without fading, swelling, or delaminating.
+          </p>
+        </div>
+
+        <!-- 4 Core Strengths & Superior Quality Badges -->
+        <div class="fmax-strengths-grid">
+          <div class="fmax-strength-card">
+            <span class="fmax-str-icon">01</span>
+            <div class="fmax-str-content">
+              <strong>Double-Hardened PUR</strong>
+              <p>Patented NT acrylic surface with UV Grey Scale 4–5. Extreme weather resistance from −80°C to +80°C with zero color fading.</p>
+            </div>
+          </div>
+          <div class="fmax-strength-card">
+            <span class="fmax-str-icon">02</span>
+            <div class="fmax-str-content">
+              <strong>Ventilated Chimney Cavity</strong>
+              <p>25–50mm engineered thermodynamic air gap behind panels flushes solar heat, cutting HVAC energy loads by up to 30%.</p>
+            </div>
+          </div>
+          <div class="fmax-strength-card">
+            <span class="fmax-str-icon">03</span>
+            <div class="fmax-str-content">
+              <strong>10-Year Factory Warranty</strong>
+              <p>Factory-backed material warranty directly from Fundermax India with certified fire resistance (EN 13501-1 Class B-s1, d0).</p>
+            </div>
+          </div>
+          <div class="fmax-strength-card">
+            <span class="fmax-str-icon">04</span>
+            <div class="fmax-str-content">
+              <strong>FSC &amp; GreenPro Certified</strong>
+              <p>100% sustainably sourced European kraft core. IGBC &amp; LEED green building compliant with non-porous anti-graffiti finish.</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- LAYER 2: MAJOR LANDMARK PROJECTS CAROUSEL (FROM 55-PAGE CATALOG) -->
+      <div class="fmax-carousel-section" id="fmax-projects">
+        <div class="fmax-carousel-header">
+          <div>
+            <p class="chap-label"><span>03.2</span> Landmark portfolio</p>
+            <h3 class="fmax-carousel-title">Major architectural projects in India.</h3>
+            <p class="fmax-carousel-sub">Engineered across commercial towers, tech campuses, luxury villas, and institutional landmarks.</p>
+          </div>
+          <div class="fmax-carousel-controls">
+            <div class="fmax-counter" aria-live="polite">
+              <span id="fmax-slide-current">01</span>
+              <i>/</i>
+              <span id="fmax-slide-total">08</span>
+            </div>
+            <div class="fmax-nav-btns">
+              <button type="button" class="fmax-btn fmax-btn-prev" id="fmax-prev" aria-label="Previous project" data-cursor="hover">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="fmax-btn fmax-btn-next" id="fmax-next" aria-label="Next project" data-cursor="hover">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="fmax-carousel-track-wrap" id="fmax-track-wrap">
+          <div class="fmax-track" id="fmax-track">
+            <!-- Slide 1: Vinpack Industries (OFFICIAL VTECH PROJECT) -->
+            <article class="fmax-slide is-active" data-index="0">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/vinpack.png" alt="Vinpack Industries Bangalore - CNC Perforated Facade by VTech" loading="lazy">
+                <span class="fmax-partner-tag">VTech Official Project · 2021</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Bangalore · Industrial Landmark</div>
+                <h4 class="fmax-slide-name">Vinpack Industries</h4>
+                <p class="fmax-slide-desc">Custom gradient CNC perforated jali facade engineered and executed by VTech Facades with rear ventilation.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>CNC Perforation</dd></div>
+                  <div><dt>Architect</dt><dd>Ar. Vivek (OCD)</dd></div>
+                  <div><dt>Décor</dt><dd>0027 Prado Agate Grey</dd></div>
+                  <div><dt>Business Partner</dt><dd class="highlight">VTech</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Slide 2: Salarpuria Sattva Galleria -->
+            <article class="fmax-slide" data-index="1">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/sattva.png" alt="Salarpuria Sattva Galleria Bangalore - High-rise Fundermax Cladding" loading="lazy">
+                <span class="fmax-partner-tag">Commercial High-Rise</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Bangalore · Landmark Tower</div>
+                <h4 class="fmax-slide-name">Salarpuria Sattva Galleria</h4>
+                <p class="fmax-slide-desc">Towering architectural exterior envelope combining solid monolithic white panels with structural curtain glazing.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>Façade Cladding</dd></div>
+                  <div><dt>Architect</dt><dd>Sudhakar Pai Associates</dd></div>
+                  <div><dt>Décor</dt><dd>0085 NT &amp; NG White</dd></div>
+                  <div><dt>Year</dt><dd>2016</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Slide 3: Fundermax Corporate HQ Bangalore -->
+            <article class="fmax-slide" data-index="2">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/fmax_hq.png" alt="Fundermax Corporate Headquarters Bangalore" loading="lazy">
+                <span class="fmax-partner-tag">Flagship Headquarters</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Bangalore · Yelahanka</div>
+                <h4 class="fmax-slide-name">Fundermax India Corporate HQ</h4>
+                <p class="fmax-slide-desc">Iconic brand headquarters showcasing kinetic yellow &amp; orange solar louvers harmonized with timber exterior cladding.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>Kinetic Louvers &amp; Wall</dd></div>
+                  <div><dt>Location</dt><dd>Yelahanka, Bangalore</dd></div>
+                  <div><dt>Features</dt><dd>Solar Shading Fins</dd></div>
+                  <div><dt>Grade</dt><dd>Max Compact Exterior</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Slide 4: Kalpataru Radiance, Mumbai (Hafeez Contractor) -->
+            <article class="fmax-slide" data-index="3">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/kalpataru.png" alt="Kalpataru Radiance Mumbai by Hafeez Contractor" loading="lazy">
+                <span class="fmax-partner-tag">Parametric Origami Skin</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Mumbai · Luxury High-Rise</div>
+                <h4 class="fmax-slide-name">Kalpataru Radiance</h4>
+                <p class="fmax-slide-desc">Multi-faceted geometric 3D origami envelope designed by Hafeez Contractor using interlocking natural oak decors.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>3D Geometric Façade</dd></div>
+                  <div><dt>Architect</dt><dd>Hafeez Contractor</dd></div>
+                  <div><dt>Décor</dt><dd>5173 Barrique &amp; 5171 Oak</dd></div>
+                  <div><dt>Year</dt><dd>2019</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Slide 5: Embassy Information Center (Embassy TechVillage) -->
+            <article class="fmax-slide" data-index="4">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/embassy.png" alt="Embassy Information Center Bangalore" loading="lazy">
+                <span class="fmax-partner-tag">Tech Campus Hub</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Bangalore · Embassy TechVillage</div>
+                <h4 class="fmax-slide-name">Embassy Information Center</h4>
+                <p class="fmax-slide-desc">Monolithic dark stone cube with deep recessed vertical window bands, engineering a sharp brutalist tech presence.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>Rainscreen Envelope</dd></div>
+                  <div><dt>Architect</dt><dd>Thomas Associates</dd></div>
+                  <div><dt>Décor</dt><dd>0926 Jazz Stone</dd></div>
+                  <div><dt>Year</dt><dd>2019</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Slide 6: Aurobindo Galaxy, Hyderabad -->
+            <article class="fmax-slide" data-index="5">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/aurobindo.png" alt="Aurobindo Galaxy Hyderabad - Faceted Soffit Ceiling" loading="lazy">
+                <span class="fmax-partner-tag">Sculptural Canopy</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Hyderabad · Commercial Center</div>
+                <h4 class="fmax-slide-name">Aurobindo Galaxy</h4>
+                <p class="fmax-slide-desc">Dramatic 3D faceted wooden ceiling soffit and massive structural column wraps in rich Amazon wood finish.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>Soffit &amp; Column Wrap</dd></div>
+                  <div><dt>Architect</dt><dd>CNT</dd></div>
+                  <div><dt>Décor</dt><dd>0922 Amazon</dd></div>
+                  <div><dt>Year</dt><dd>2021</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Slide 7: Beehive Residence, Bangalore (4site Architects) -->
+            <article class="fmax-slide" data-index="6">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/beehive.png" alt="Beehive Private Residence Bangalore" loading="lazy">
+                <span class="fmax-partner-tag">Luxury Residence</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Bangalore · Architectural Villa</div>
+                <h4 class="fmax-slide-name">Beehive Residence</h4>
+                <p class="fmax-slide-desc">Multi-tiered perforated terracotta-look privacy screens providing daylight filtration, natural ventilation, and nighttime glow.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>Perforated Jali Screen</dd></div>
+                  <div><dt>Architect</dt><dd>4site Architects</dd></div>
+                  <div><dt>Décor</dt><dd>0932 Akro Terra</dd></div>
+                  <div><dt>Year</dt><dd>2020</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <!-- Slide 8: Luxury Villa, Bangalore (Bodh Group) -->
+            <article class="fmax-slide" data-index="7">
+              <div class="fmax-slide-media">
+                <img src="images/fmax/photos/bodh_villa.png" alt="Luxury Private Villa Bangalore by Bodh Group" loading="lazy">
+                <span class="fmax-partner-tag">Multi-Level Villa</span>
+                <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
+                <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
+              </div>
+              <div class="fmax-slide-body">
+                <div class="fmax-slide-eyebrow">Bangalore · High-End Villa</div>
+                <h4 class="fmax-slide-name">Bodh Group Residence</h4>
+                <p class="fmax-slide-desc">Illuminated natural timber soffits, warm under-canopies, and cantilevered balcony envelopes in layered natural wood tones.</p>
+                <dl class="fmax-slide-specs">
+                  <div><dt>Application</dt><dd>Façade, Soffit &amp; Gate</dd></div>
+                  <div><dt>Architect</dt><dd>Bodh Group</dd></div>
+                  <div><dt>Décor</dt><dd>Amazon, Taurus &amp; Creek</dd></div>
+                  <div><dt>Year</dt><dd>2020</dd></div>
+                </dl>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="fmax-carousel-progress">
+          <div class="fmax-progress-bar" id="fmax-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- LAYER 3: SUPERIOR PRODUCT RANGE & ARCHITECTURAL VERSATILITY -->
+      <div class="fmax-products-section">
+        <div class="fmax-products-head">
+          <div>
+            <p class="chap-label"><span>03.3</span> Product collections</p>
+            <h3 class="fmax-products-title">Superior product architectures.</h3>
+          </div>
+          <p class="fmax-products-desc">
+            From timeless Austrian timber grains to non-reflective super-matt surfaces and laser-cut perforated jali screens.
+          </p>
+        </div>
+
+        <div class="fmax-products-grid">
+          <div class="fmax-product-card" data-cursor="hover">
+            <div class="fmax-card-header">
+              <span class="fmax-collection-tag">Core Architectural</span>
+              <h4>Exterior 2.3 Essential</h4>
+            </div>
+            <p>Timeless authentic woodgrains, monolith stones, and solid architectural palettes. Engineered for seamless weatherboard and rainscreen elevations.</p>
+            <ul class="fmax-card-features">
+              <li>Authentic Woods: Tyrol Pine, Amazon, Barrique Oak</li>
+              <li>Monolith Stones: Colosseum, Prado Agate, Cave</li>
+              <li>PUR Double-Hardened NT Acrylic Finish</li>
+            </ul>
+          </div>
+
+          <div class="fmax-product-card fmax-card-highlight" data-cursor="hover">
+            <div class="fmax-card-header">
+              <span class="fmax-collection-tag">New Generation Matte</span>
+              <h4>Exterior Pro 2.3 Stellar</h4>
+            </div>
+            <p>Anti-fingerprint, anti-glare super-matt architectural finish. Delivers an ultra-deep, non-reflective cosmic texture with unmatched scratch resistance.</p>
+            <ul class="fmax-card-features">
+              <li>Super-Matt Non-Reflective Appearance</li>
+              <li>Anti-Fingerprint &amp; Anti-Graffiti Surface</li>
+              <li>High Impact &amp; Chemical Durability</li>
+            </ul>
+          </div>
+
+          <div class="fmax-product-card" data-cursor="hover">
+            <div class="fmax-card-header">
+              <span class="fmax-collection-tag">Bespoke Fabrication</span>
+              <h4>Max Compact Individual (CNC Jali)</h4>
+            </div>
+            <p>Parametric digital milling for intricate jali screens, daylight control fins, and decorative louvers. Custom perforation patterns tailored to your elevation.</p>
+            <ul class="fmax-card-features">
+              <li>Custom Laser &amp; 5-Axis CNC Milling</li>
+              <li>Passive Solar Shading &amp; Ventilation</li>
+              <li>Concealed Undercut Anchors (Modulo System)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ACTION & CONVERSION HUB -->
+        <div class="fmax-action-hub">
+          <div class="fmax-action-info">
+            <h4>Bring your elevation drawings to Rajajinagar.</h4>
+            <p>Inspect full 1:1 scale mockups, substructure cross-sections, and authentic Austrian decors at our Bengaluru experience centre.</p>
+          </div>
+          <div class="fmax-action-btns">
+            <button type="button" class="fmax-spec-btn" id="fmax-spec-add" data-cursor="hover">
+              <span>+</span> Add Fundermax Swatches to Spec Box
+            </button>
+            <button type="button" class="inquire fmax-consult-btn" data-inquire-open data-category="exterior-cladding" data-source-cta="partner-fundermax" data-partner="fundermax" data-cursor="hover">
+              Book Showroom Consultation →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="pathways" id="pathways">
-      <p class="chap-label reveal-label"><span>01</span> Our areas of expertise</p>
+      <p class="chap-label reveal-label"><span>05</span> Our areas of expertise</p>
       <h2 class="reveal-head">One studio. Three specialisms.</h2>
       <div class="doors">
         <a class="door" href="#spectrum" data-cursor="hover">
@@ -288,14 +690,14 @@
     </section>
 
     <section class="spectrum" id="spectrum">
-      <p class="chap-label reveal-label"><span>03</span> Material spectrum</p>
+      <p class="chap-label reveal-label"><span>06</span> Material spectrum</p>
       <h2 class="reveal-head">Specify with confidence.</h2>
       <div class="chips" id="chips">
         <button class="chip is-on" data-f="all" type="button">All</button>
         <button class="chip" data-f="metal" type="button">Architectural metals</button>
         <button class="chip" data-f="concrete" type="button">Concrete &amp; GFRC</button>
         <button class="chip" data-f="earth" type="button">Earthy terracotta</button>
-        <button class="chip chip-spec" id="open-spec" type="button" data-cursor="hover">Spec box <b id="spec-count">0</b></button>
+        <button class="chip chip-spec" id="open-spec" type="button" data-cursor="hover">Spec box <b class="spec-count">0</b></button>
       </div>
       <div class="swatches" id="swatches">
         <button class="swatch" data-c="metal" data-n="Corten" style="--s:#8b4513" type="button"></button>
@@ -310,7 +712,7 @@
     </section>
 
     <section class="manifesto" id="circularity">
-      <p class="chap-label reveal-label"><span>04</span> Circularity</p>
+      <p class="chap-label reveal-label"><span>07</span> Circularity</p>
       <blockquote id="quote">
         Reducing embodied carbon in the building envelope is one of the most direct levers we have for a sustainable built environment. We are committed to acting on that truth.
       </blockquote>
@@ -327,7 +729,7 @@
         <div class="photo-blind" style="background-image:url('images/project-11.jpeg')"></div>
       </div>
       <div class="atelier-copy">
-        <p class="chap-label reveal-label"><span>05</span> From the fabrication floor</p>
+        <p class="chap-label reveal-label"><span>08</span> From the fabrication floor</p>
         <h2 class="reveal-head">To the world's skylines.</h2>
         <p class="atelier-p">Skilled fabricators at the milling bench. Full-scale pressure-equalisation chamber testing. BIM-integrated workflows, from design intent to installed panel.</p>
         <ul class="telemetry">
@@ -339,22 +741,21 @@
       </div>
     </section>
 
-    <section class="cinema" id="cinema">
-      <p class="chap-label reveal-label"><span>06</span> Project showreel</p>
-      <h2 class="reveal-head">Facades in motion.</h2>
-      <div class="film" id="film">
-        <video id="film-video" muted loop playsinline autoplay poster="images/project-12.jpeg">
-          <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4">
-        </video>
-        <button class="expand" id="expand-film" type="button" data-cursor="hover">Expand</button>
-      </div>
-    </section>
   </main>
 
   <footer class="footer" id="footer">
+    <div class="footer-showreel">
+      <p class="chap-label"><span>09</span> Project showreel</p>
+      <div class="film" id="film">
+        <video id="film-video" muted loop playsinline autoplay poster="images/project-12.jpeg">
+          <source src="videos/demo-facades-video.mp4" type="video/mp4">
+        </video>
+        <button class="expand" id="expand-film" type="button" data-cursor="hover">Expand</button>
+      </div>
+    </div>
     <div class="footer-grid">
       <article class="portrait" id="portrait">
-        <span class="portrait-index" aria-hidden="true">07</span>
+        <span class="portrait-index" aria-hidden="true">10</span>
         <p>Your Vision, Delivered.</p>
       </article>
       <div class="cols">
@@ -368,7 +769,7 @@
           <h4><i>02</i> Studio</h4>
           <a href="about.html#systems" data-cursor="hover">Systems</a>
           <a href="about.html#atelier" data-cursor="hover">Atelier</a>
-          <a href="contact.html" data-cursor="hover">Inquire</a>
+          <a href="#inquire" data-inquire-open data-source-cta="footer" data-cursor="hover">Inquire</a>
         </div>
         <div>
           <h4><i>03</i> Offices</h4>
@@ -379,23 +780,6 @@
       </div>
     </div>
 
-    <div class="footer-correspondence">
-      <div class="news-intro">
-        <span class="news-index" aria-hidden="true">08</span>
-        <div>
-          <h3>Correspondence</h3>
-          <p>Technical briefings — material studies, facade systems in progress, project updates.</p>
-        </div>
-      </div>
-      <form class="news" onsubmit="event.preventDefault();">
-        <label class="visually-hidden" for="studio-email">Studio email</label>
-        <div class="news-field">
-          <input id="studio-email" type="email" placeholder="Studio email" required autocomplete="email">
-        </div>
-        <button type="submit" class="news-submit" data-cursor="hover">Subscribe</button>
-      </form>
-    </div>
-
     <div class="footer-bar">
       <a href="index.html" class="footer-brand" data-cursor="hover">
         <span class="brand-glyph" aria-hidden="true"></span>
@@ -404,10 +788,11 @@
           <span class="brand-sub">Bengaluru</span>
         </span>
       </a>
+      <p class="footer-credit">Managed with love by <a href="https://viralinbound.com" target="_blank" rel="noopener noreferrer" data-cursor="hover">Viral Inbound</a></p>
       <nav class="footer-meta" aria-label="Studio links">
         <span>© 2026</span>
         <a href="about.html" data-cursor="hover">About</a>
-        <a href="contact.html" data-cursor="hover">Inquire</a>
+        <a href="#inquire" data-inquire-open data-source-cta="footer" data-cursor="hover">Inquire</a>
         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" data-cursor="hover">LinkedIn</a>
         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" data-cursor="hover">Instagram</a>
       </nav>
@@ -424,9 +809,26 @@
   <div class="backdrop" id="backdrop"></div>
   <div class="toast" id="toast" role="status"></div>
 
+  <nav class="quick-bar" aria-label="Quick contact">
+    <a class="quick-bar-btn is-wa" href="https://wa.me/919980111468?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20facade%20systems." target="_blank" rel="noopener noreferrer" data-cursor="hover">
+      <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.02Zm-7.01 15.24h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.23 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.24-.75-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.01-.47-.01-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29Z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a class="quick-bar-btn is-call" href="tel:+919980111468" data-cursor="hover">
+      <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1L6.6 10.8Z"/></svg>
+      <span>Call</span>
+    </a>
+    <button type="button" class="quick-bar-btn is-inquire" data-inquire-open data-source-cta="quick-bar" data-cursor="hover">
+      <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7.4 8 5.8 8-5.8"/></svg>
+      <span>Inquire</span>
+    </button>
+  </nav>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="app.js"></script>
+  <script src="js/supabase-config.js?v=leads1"></script>
+  <script src="js/inquire.js?v=leads1"></script>
+  <script src="app.js?v=para6"></script>
 </body>
 </html>
