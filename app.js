@@ -115,14 +115,16 @@ function initNav() {
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("mobile-nav");
   if (!toggle || !menu) return;
-  toggle.addEventListener("click", () => {
-    toggle.classList.toggle("is-open");
-    menu.classList.toggle("is-open");
-  });
-  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
-    toggle.classList.remove("is-open");
-    menu.classList.remove("is-open");
-  }));
+  const setOpen = (open) => {
+    toggle.classList.toggle("is-open", open);
+    menu.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "mobile-nav");
+  toggle.addEventListener("click", () => setOpen(!menu.classList.contains("is-open")));
+  menu.querySelectorAll("a, [data-install-app]").forEach((el) => el.addEventListener("click", () => setOpen(false)));
 }
 
 function initProgress() {
@@ -412,7 +414,17 @@ function initReel() {
       .join("");
   }
 
-  const distance = () => Math.max(reel.scrollWidth - window.innerWidth + 80, 0);
+  const updatePadding = () => {
+    if (!cards.length) return;
+    const cardWidth = cards[0].offsetWidth;
+    const pad = Math.max(Math.round((window.innerWidth - cardWidth) / 2), 24);
+    reel.style.paddingLeft = `${pad}px`;
+    reel.style.paddingRight = `${pad}px`;
+  };
+
+  updatePadding();
+
+  const distance = () => Math.max(reel.scrollWidth - window.innerWidth, 0);
 
   const setActive = () => {
     const focusX = window.innerWidth * 0.5;
@@ -460,6 +472,7 @@ function initReel() {
         setActive();
       },
       onRefresh: (self) => {
+        updatePadding();
         setActive();
         if (fill) fill.style.transform = `scaleX(${self.progress})`;
       }
@@ -467,16 +480,35 @@ function initReel() {
   });
   scrollTrigger = tween.scrollTrigger;
 
+  ScrollTrigger.addEventListener("refreshInit", updatePadding);
+
   setActive();
 
-  ticksEl?.addEventListener("click", (e) => {
-    const btn = e.target.closest(".works-tick");
-    if (!btn || !scrollTrigger) return;
-    const i = Number(btn.dataset.i);
+  const scrollToCard = (i) => {
+    if (!scrollTrigger) return;
     const progress = cards.length <= 1 ? 0 : i / (cards.length - 1);
     const y = scrollTrigger.start + (scrollTrigger.end - scrollTrigger.start) * progress;
     if (window.__lenis) window.__lenis.scrollTo(y, { duration: 1.1 });
     else window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  ticksEl?.addEventListener("click", (e) => {
+    const btn = e.target.closest(".works-tick");
+    if (!btn) return;
+    scrollToCard(Number(btn.dataset.i));
+  });
+
+  cards.forEach((card, i) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a, button")) return;
+      if (!card.classList.contains("is-active")) {
+        scrollToCard(i);
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    updatePadding();
   });
 }
 

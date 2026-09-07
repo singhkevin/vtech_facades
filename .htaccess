@@ -1,5 +1,6 @@
 Options -Indexes
 AddDefaultCharset UTF-8
+AddType application/manifest+json .webmanifest
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -11,6 +12,12 @@ AddDefaultCharset UTF-8
   Header set X-Content-Type-Options "nosniff"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set X-Frame-Options "SAMEORIGIN"
+  <Files "sw.js">
+    Header set Cache-Control "no-cache"
+  </Files>
+  <Files "site.webmanifest">
+    Header set Cache-Control "no-cache"
+  </Files>
 </IfModule>
 
 <IfModule mod_expires.c>
@@ -18,5 +25,6 @@ AddDefaultCharset UTF-8
   ExpiresByType text/css "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
   ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/webp "access plus 30 days"
 </IfModule>

@@ -94,6 +94,9 @@
     lastFocus = document.activeElement;
     dialog.hidden = false;
     document.body.classList.add("inquire-lock");
+    if (window.__lenis && typeof window.__lenis.stop === "function") {
+      window.__lenis.stop();
+    }
     const bar = document.querySelector(".quick-bar");
     if (bar) bar.inert = true;
     const select = dialog.querySelector("#inquire-category");
@@ -106,6 +109,9 @@
   function closeDialog() {
     dialog.classList.remove("is-open");
     document.body.classList.remove("inquire-lock");
+    if (window.__lenis && typeof window.__lenis.start === "function") {
+      window.__lenis.start();
+    }
     const bar = document.querySelector(".quick-bar");
     if (bar) bar.inert = false;
     const finish = () => {
@@ -244,10 +250,11 @@
     dialog = document.createElement("div");
     dialog.id = "inquire";
     dialog.className = "inquire-root";
+    dialog.setAttribute("data-lenis-prevent", "");
     dialog.hidden = true;
     dialog.innerHTML = `
       <div class="inquire-backdrop" data-inquire-close tabindex="-1"></div>
-      <div class="inquire-dialog" role="dialog" aria-modal="true" aria-labelledby="inquire-title">
+      <div class="inquire-dialog" role="dialog" aria-modal="true" aria-labelledby="inquire-title" data-lenis-prevent>
         <button type="button" class="inquire-close" data-inquire-close aria-label="Close enquire form">Close</button>
         <p class="chap-label"><span>Enquire</span> Project notes</p>
         <h2 id="inquire-title">Tell us what you are specifying.</h2>
