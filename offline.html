@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Offline | VTech Facades</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#254985">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" href="icons/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .offline-wrap {
+      min-height: 70vh;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 140px 28px 80px;
+    }
+    .offline-wrap h1 {
+      font-family: "Cormorant", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(36px, 6vw, 56px);
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+    }
+    .offline-wrap p { color: #6a645a; max-width: 42ch; }
+    .offline-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .offline-links a {
+      display: inline-flex;
+      padding: 10px 16px;
+      border: 1px solid rgba(28, 39, 64, 0.12);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body class="is-page">
+  <header class="site-header is-solid" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-glyph" aria-hidden="true"></span>
+        <span>
+          <span class="brand-name">VTech Facades</span>
+          <span class="brand-sub">Bengaluru</span>
+        </span>
+      </a>
+    </div>
+  </header>
+  <main class="offline-wrap">
+    <p class="eyebrow">Offline</p>
+    <h1>This page is not available without a connection.</h1>
+    <p>Open a saved page from your last visit, or reconnect to load new work and send an enquiry.</p>
+    <nav class="offline-links" aria-label="Cached pages">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Works</a>
+      <a href="systems.html">Systems</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </main>
+  <script src="js/pwa-register.js" defer></script>
+</body>
+</html>
