@@ -15,16 +15,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="VTech">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <script>
-    window.addEventListener("beforeinstallprompt", function (event) {
-      event.preventDefault();
-      window.__vtechInstall = event;
-    });
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=mobile1">
+  <link rel="stylesheet" href="styles.css?v=colourway1">
   <link rel="preload" as="image" href="images/hero-01-envelopes.png">
 </head>
 <body>
@@ -55,7 +49,6 @@
       </nav>
       <div class="header-end">
         <button type="button" class="spec-pill" id="open-spec-nav" data-cursor="hover">Spec box <b class="spec-count" id="spec-count">0</b></button>
-        <button type="button" class="inquire" data-install-app hidden data-cursor="hover">Install app</button>
         <button type="button" class="inquire" data-inquire-open data-source-cta="header" data-cursor="hover">Inquire</button>
         <button class="nav-lines" id="nav-toggle" type="button" aria-label="Menu"><span></span><span></span></button>
       </div>
@@ -67,7 +60,6 @@
     <a href="systems.html">02 Systems</a>
     <a href="about.html">03 About</a>
     <a href="contact.html">04 Contact</a>
-    <button type="button" data-install-app hidden>Install app</button>
   </nav>
 
   <main>
@@ -1103,25 +1095,60 @@
       </div>
     </section>
 
-    <section class="spectrum" id="spectrum">
-      <p class="chap-label reveal-label"><span>05</span> Material spectrum</p>
-      <h2 class="reveal-head">Specify with confidence.</h2>
-      <div class="chips" id="chips">
-        <button class="chip is-on" data-f="all" type="button">All</button>
-        <button class="chip" data-f="metal" type="button">Architectural metals</button>
-        <button class="chip" data-f="concrete" type="button">Concrete &amp; GFRC</button>
-        <button class="chip" data-f="earth" type="button">Earthy terracotta</button>
-        <button class="chip chip-spec" id="open-spec" type="button" data-cursor="hover">Spec box <b class="spec-count">0</b></button>
-      </div>
-      <div class="swatches" id="swatches">
-        <button class="swatch" data-c="metal" data-n="Corten" style="--s:#8b4513" type="button"></button>
-        <button class="swatch" data-c="metal" data-n="Patinated copper" style="--s:#2f6f62" type="button"></button>
-        <button class="swatch" data-c="metal" data-n="Bronze" style="--s:#8c6e48" type="button"></button>
-        <button class="swatch" data-c="metal" data-n="Titanium zinc" style="--s:#8a9096" type="button"></button>
-        <button class="swatch" data-c="concrete" data-n="Ash GFRC" style="--s:#9a958c" type="button"></button>
-        <button class="swatch" data-c="concrete" data-n="Charcoal skin" style="--s:#3a3a38" type="button"></button>
-        <button class="swatch" data-c="earth" data-n="Kiln clay" style="--s:#b45a3c" type="button"></button>
-        <button class="swatch" data-c="earth" data-n="Sand baguette" style="--s:#c4a574" type="button"></button>
+    <section class="spectrum" id="spectrum" data-cw-target="a">
+      <p class="chap-label reveal-label"><span>05</span> Open colourway</p>
+      <h2 class="reveal-head">Any colour. Any combination.</h2>
+      <p class="spectrum-lede">We do not lock a project to a stock range. Specify any RAL, NCS, Pantone, mill-match, or a pairing of your own — we engineer the finish across metals, HPL, terracotta, and GFRC.</p>
+
+      <div class="colourway">
+        <div class="cw-elevation" id="cw-elevation" aria-hidden="true">
+          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
+          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
+          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
+          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
+          <p class="cw-caption">Live pairing on a rainscreen elevation</p>
+        </div>
+
+        <div class="cw-panel">
+          <p class="cw-kicker">Compose a pairing</p>
+          <div class="cw-wells">
+            <label class="cw-well">
+              <span>Primary</span>
+              <input id="cw-a" type="color" value="#8b4a2b" aria-label="Primary colour">
+              <b id="cw-a-hex">#8B4A2B</b>
+            </label>
+            <label class="cw-well">
+              <span>Accent</span>
+              <input id="cw-b" type="color" value="#2f4f55" aria-label="Accent colour">
+              <b id="cw-b-hex">#2F4F55</b>
+            </label>
+          </div>
+
+          <label class="cw-ratio">
+            <span>Mix <em id="cw-ratio-label">62 / 38</em></span>
+            <input id="cw-ratio" type="range" min="35" max="80" value="62" aria-label="Primary to accent mix">
+          </label>
+
+          <div class="cw-hue-wrap">
+            <span>Or tap the spectrum — any hue, then refine the hex</span>
+            <button class="cw-hue" id="cw-hue" type="button" aria-label="Pick a hue from the full spectrum"></button>
+            <span class="cw-hue-hint" id="cw-hue-hint">Applies to primary</span>
+          </div>
+
+          <ul class="cw-standards">
+            <li>RAL</li>
+            <li>NCS</li>
+            <li>Pantone</li>
+            <li>Custom mill</li>
+            <li>Print-to-match</li>
+          </ul>
+
+          <div class="cw-actions">
+            <button class="chip-spec" id="open-spec" type="button" data-cursor="hover">Spec box <b class="spec-count">0</b></button>
+            <button class="cw-hold" id="cw-hold" type="button" data-cursor="hover">Hold this pairing</button>
+            <button class="inquire" id="cw-inquire" type="button" data-inquire-open data-category="exterior-cladding" data-source-cta="spectrum-colourway" data-cursor="hover">Inquire this colourway</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1236,18 +1263,14 @@
       <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7.4 8 5.8 8-5.8"/></svg>
       <span>Inquire</span>
     </button>
-    <button type="button" class="quick-bar-btn is-install" data-install-app hidden data-cursor="hover">
-      <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="6" y="3.5" width="12" height="17" rx="2"/><path d="M12 8v7M9.2 12.3 12 15.2l2.8-2.9"/></svg>
-      <span>Install</span>
-    </button>
   </nav>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="js/supabase-config.js?v=leads1"></script>
-  <script src="js/inquire.js?v=leads2"></script>
-  <script src="app.js?v=mobile1"></script>
-  <script src="js/pwa-register.js?v=pwa2" defer></script>
+  <script src="js/inquire.js?v=leads3"></script>
+  <script src="app.js?v=colourway1"></script>
+  <script src="js/pwa-register.js?v=pwa3" defer></script>
 </body>
 </html>

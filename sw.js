@@ -1,4 +1,4 @@
-const CACHE_NAME = "vtech-pwa-v2";
+const CACHE_NAME = "vtech-pwa-v3";
 const RUNTIME_NAME = "vtech-runtime-v1";
 const RUNTIME_MAX = 80;
 

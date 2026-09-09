@@ -15,12 +15,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="VTech">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <script>
-    window.addEventListener("beforeinstallprompt", function (event) {
-      event.preventDefault();
-      window.__vtechInstall = event;
-    });
-  </script>
   <link rel="canonical" href="https://vtechfacades.com/systems.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +38,6 @@
         <a href="contact.html"><i>04</i> Contact</a>
       </nav>
       <div class="header-end">
-        <button type="button" class="inquire" data-install-app hidden>Install app</button>
         <button type="button" class="inquire" data-inquire-open data-source-cta="header">Inquire</button>
         <button class="nav-lines" id="nav-toggle" type="button" aria-label="Menu"><span></span><span></span></button>
       </div>
@@ -56,7 +49,6 @@
     <a href="systems.html" class="is-active">02 Systems</a>
     <a href="about.html">03 About</a>
     <a href="contact.html">04 Contact</a>
-    <button type="button" data-install-app hidden>Install app</button>
   </nav>
 
   <main class="page-main">
@@ -161,15 +153,11 @@
       <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7.4 8 5.8 8-5.8"/></svg>
       <span>Inquire</span>
     </button>
-    <button type="button" class="quick-bar-btn is-install" data-install-app hidden>
-      <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="6" y="3.5" width="12" height="17" rx="2"/><path d="M12 8v7M9.2 12.3 12 15.2l2.8-2.9"/></svg>
-      <span>Install</span>
-    </button>
   </nav>
 
   <script src="js/supabase-config.js?v=leads1"></script>
   <script src="js/inquire.js?v=leads2"></script>
   <script src="page.js?v=mobile1"></script>
-  <script src="js/pwa-register.js?v=pwa2" defer></script>
+  <script src="js/pwa-register.js?v=pwa3" defer></script>
 </body>
 </html>
