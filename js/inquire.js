@@ -101,6 +101,12 @@
     if (bar) bar.inert = true;
     const select = dialog.querySelector("#inquire-category");
     if (pendingCategory) select.value = pendingCategory;
+    if (opts.note) {
+      const ta = dialog.querySelector('textarea[name="message"]');
+      if (ta && (!ta.value.trim() || ta.value.startsWith("Custom colourway:"))) {
+        ta.value = opts.note;
+      }
+    }
     void dialog.offsetWidth;
     dialog.classList.add("is-open");
     dialog.querySelector("#inquire-name").focus();
@@ -163,6 +169,7 @@
         category: trigger.getAttribute("data-category") || "",
         cta: sourceCtaFrom(trigger),
         partner: trigger.getAttribute("data-partner") || "",
+        note: trigger.getAttribute("data-inquire-note") || "",
       });
     });
   }

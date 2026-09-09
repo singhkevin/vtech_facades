@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initHeader();
   initSpec();
-  initFilters();
+  initColourway();
   initTilt();
   initFilm();
   initProgress();
@@ -124,7 +124,7 @@ function initNav() {
   toggle.setAttribute("aria-expanded", "false");
   toggle.setAttribute("aria-controls", "mobile-nav");
   toggle.addEventListener("click", () => setOpen(!menu.classList.contains("is-open")));
-  menu.querySelectorAll("a, [data-install-app]").forEach((el) => el.addEventListener("click", () => setOpen(false)));
+  menu.querySelectorAll("a").forEach((el) => el.addEventListener("click", () => setOpen(false)));
 }
 
 function initProgress() {
@@ -535,7 +535,7 @@ function initChoreography() {
   document.querySelectorAll("section").forEach((section) => {
     const label = section.querySelector(".reveal-label");
     const head = section.querySelector(".reveal-head");
-    const rest = section.querySelectorAll(".door, .swatches, .metrics, .atelier-p, .telemetry");
+    const rest = section.querySelectorAll(".door, .colourway, .metrics, .atelier-p, .telemetry");
     if (label) {
       gsap.from(label, {
         y: 16, opacity: 0, duration: 0.7, ease: "power2.out",
@@ -632,22 +632,101 @@ function initFooter() {
   });
 }
 
-function initFilters() {
-  const chips = document.querySelectorAll(".chip[data-f]");
-  const cards = [...document.querySelectorAll(".swatch")];
-  chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      chips.forEach((c) => c.classList.remove("is-on"));
-      chip.classList.add("is-on");
-      const f = chip.dataset.f;
-      cards.forEach((card) => {
-        const show = f === "all" || card.dataset.c === f;
-        card.classList.toggle("is-out", !show);
-        gsap.to(card, { opacity: show ? 1 : 0, scale: show ? 1 : 0.96, duration: 0.35, ease: "power2.out" });
-      });
+function hexLabel(value) {
+  return String(value || "").toUpperCase();
+}
+
+function hslToHex(h, s, l) {
+  const sat = s / 100;
+  const lit = l / 100;
+  const a = sat * Math.min(lit, 1 - lit);
+  const f = (n) => {
+    const k = (n + h / 30) % 12;
+    const color = lit - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, "0");
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+function initColourway() {
+  const root = document.getElementById("spectrum");
+  const elevation = document.getElementById("cw-elevation");
+  const inputA = document.getElementById("cw-a");
+  const inputB = document.getElementById("cw-b");
+  const hexA = document.getElementById("cw-a-hex");
+  const hexB = document.getElementById("cw-b-hex");
+  const ratio = document.getElementById("cw-ratio");
+  const ratioLabel = document.getElementById("cw-ratio-label");
+  const hue = document.getElementById("cw-hue");
+  const hueHint = document.getElementById("cw-hue-hint");
+  const hold = document.getElementById("cw-hold");
+  const inquire = document.getElementById("cw-inquire");
+  if (!root || !elevation || !inputA || !inputB || !ratio) return;
+
+  const slats = [...elevation.querySelectorAll(".cw-slat")];
+  let target = "a";
+
+  function pairingNote() {
+    const mix = Number(ratio.value);
+    return `Custom colourway: primary ${hexLabel(inputA.value)} / accent ${hexLabel(inputB.value)}, mix ${mix}/${100 - mix}. Please match across the specified system.`;
+  }
+
+  function paint() {
+    const a = inputA.value;
+    const b = inputB.value;
+    const mix = Number(ratio.value);
+    const primaryCount = Math.round((mix / 100) * slats.length);
+    slats.forEach((slat, i) => {
+      slat.style.backgroundColor = i < primaryCount ? a : b;
     });
+    if (hexA) hexA.textContent = hexLabel(a);
+    if (hexB) hexB.textContent = hexLabel(b);
+    if (ratioLabel) ratioLabel.textContent = `${mix} / ${100 - mix}`;
+    if (hueHint) hueHint.textContent = target === "a" ? "Applies to primary" : "Applies to accent";
+    if (inquire) inquire.setAttribute("data-inquire-note", pairingNote());
+  }
+
+  function setTarget(next) {
+    target = next;
+    root.dataset.cwTarget = next;
+    paint();
+  }
+
+  function applyHue(event) {
+    const box = hue.getBoundingClientRect();
+    const t = Math.min(1, Math.max(0, (event.clientX - box.left) / box.width));
+    const color = hslToHex(Math.round(t * 360), 36, 38);
+    const input = target === "b" ? inputB : inputA;
+    input.value = color;
+    paint();
+  }
+
+  inputA.addEventListener("input", () => {
+    setTarget("a");
+    paint();
   });
-  cards.forEach((card) => card.addEventListener("click", () => addSpec(card.dataset.n)));
+  inputB.addEventListener("input", () => {
+    setTarget("b");
+    paint();
+  });
+  inputA.addEventListener("focus", () => setTarget("a"));
+  inputB.addEventListener("focus", () => setTarget("b"));
+  ratio.addEventListener("input", paint);
+
+  hue?.addEventListener("pointerdown", (event) => {
+    hue.setPointerCapture(event.pointerId);
+    applyHue(event);
+  });
+  hue?.addEventListener("pointermove", (event) => {
+    if (!hue.hasPointerCapture(event.pointerId)) return;
+    applyHue(event);
+  });
+
+  hold?.addEventListener("click", () => {
+    addSpec(`Colourway ${hexLabel(inputA.value)} / ${hexLabel(inputB.value)}`);
+  });
+
+  paint();
 }
 
 const spec = [];

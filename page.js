@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-controls", "mobile-nav");
     toggle.addEventListener("click", () => setOpen(!menu.classList.contains("is-open")));
-    menu.querySelectorAll("a, [data-install-app]").forEach((el) => el.addEventListener("click", () => setOpen(false)));
+    menu.querySelectorAll("a").forEach((el) => el.addEventListener("click", () => setOpen(false)));
   }
 });
