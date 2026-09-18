@@ -1,5 +1,5 @@
-const CACHE_NAME = "vtech-pwa-v3";
-const RUNTIME_NAME = "vtech-runtime-v1";
+const CACHE_NAME = "vtech-pwa-v12";
+const RUNTIME_NAME = "vtech-runtime-v2";
 const RUNTIME_MAX = 80;
 
 const PRECACHE = [
@@ -7,7 +7,7 @@ const PRECACHE = [
   "./index.html",
   "./about.html",
   "./projects.html",
-  "./systems.html",
+  "./solutions.html",
   "./contact.html",
   "./offline.html",
   "./styles.css",

@@ -6,6 +6,8 @@ AddType application/manifest+json .webmanifest
   RewriteEngine On
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteRule ^systems\.html$ /solutions.html [R=301,L]
+  RewriteRule ^materials\.html$ /solutions.html [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>
