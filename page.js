@@ -21,4 +21,21 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.addEventListener("click", () => setOpen(!menu.classList.contains("is-open")));
     menu.querySelectorAll("a").forEach((el) => el.addEventListener("click", () => setOpen(false)));
   }
+
+  const filters = document.querySelector(".project-filters");
+  const tiles = [...document.querySelectorAll(".work-tile[data-tags]")];
+  if (filters && tiles.length) {
+    filters.addEventListener("click", (event) => {
+      const btn = event.target.closest("button[data-filter]");
+      if (!btn) return;
+      const filter = btn.getAttribute("data-filter");
+      filters.querySelectorAll("button").forEach((item) => item.classList.toggle("is-on", item === btn));
+      tiles.forEach((tile) => {
+        const tags = (tile.getAttribute("data-tags") || "").split(/\s+/);
+        const show = filter === "all" || tags.includes(filter);
+        tile.classList.toggle("is-hidden", !show);
+        tile.hidden = !show;
+      });
+    });
+  }
 });

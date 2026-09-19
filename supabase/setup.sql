@@ -44,15 +44,23 @@ create policy "anon_read_active_categories"
   using (is_active = true);
 
 insert into public.categories (slug, label, sort_order) values
-  ('exterior-cladding', 'Exterior wall cladding', 10),
-  ('balcony-panels', 'Balcony panels', 20),
-  ('interior-hpl', 'Interior HPL', 30),
-  ('design-assist', 'Design assist', 40),
-  ('general', 'General enquiry', 90)
+  ('exterior-hpl', 'Exterior HPL Cladding', 10),
+  ('ventilated-facade', 'Ventilated Façade', 20),
+  ('architectural-glazing', 'Architectural Glazing', 30),
+  ('structural-spider-glazing', 'Structural or Spider Glazing', 40),
+  ('glass-canopy-skylight', 'Glass Canopy or Skylight', 50),
+  ('cnc-facade-screen', 'CNC Façade Screen', 60),
+  ('balcony-panel', 'Balcony Panel', 70),
+  ('interior-hpl', 'Interior HPL', 80),
+  ('other-facade', 'Other Façade Requirement', 90)
 on conflict (slug) do update set
   label = excluded.label,
   sort_order = excluded.sort_order,
   is_active = true;
+
+update public.categories
+set is_active = false
+where slug in ('exterior-cladding', 'balcony-panels', 'design-assist', 'general');
 
 create or replace function public.submit_lead(
   p_name text,

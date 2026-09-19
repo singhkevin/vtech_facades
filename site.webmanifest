@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "VTech Facades",
-  "short_name": "VTech",
-  "description": "Authorized Fundermax partner for exterior wall cladding, balcony panels and facade systems in South India.",
+  "name": "V-TECH Facades",
+  "short_name": "V-TECH",
+  "description": "Authorised Fundermax partner for façade, glazing and exterior cladding solutions in Bangalore.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -42,22 +42,22 @@
   "shortcuts": [
     {
       "name": "Projects",
-      "short_name": "Works",
-      "description": "Selected cladding and facade works",
+      "short_name": "Projects",
+      "description": "Selected cladding and glazing projects",
       "url": "./projects.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Facade systems",
-      "short_name": "Systems",
-      "description": "Exterior cladding and balcony panels",
-      "url": "./systems.html",
+      "name": "Solutions",
+      "short_name": "Solutions",
+      "description": "Façade, glazing and HPL cladding solutions",
+      "url": "./solutions.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Contact",
       "short_name": "Contact",
-      "description": "Rajajinagar showroom and enquire",
+      "description": "Rajajinagar showroom and project enquiry",
       "url": "./contact.html",
       "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     }

@@ -1,21 +1,19 @@
-# VTech Facades
+# V-TECH Facades
 
-> Authorized Fundermax business partner and facade cladding specialist in Bengaluru, South India.
+> Authorised Fundermax partner and façade specialist in Bangalore.
 
-- Owner: V-Tech Building Systems Pvt. Ltd
-- Founded: 2017 (facades division) by Mr. Ishwar B. G and Mr. Bhargav Panthulu
-- Specialties: Fundermax HPL panels, balcony panels, exterior and interior wall cladding
+- Owner: V-TECH Building Systems Pvt. Ltd
+- Associated with Fundermax India since 2017
+- Specialties: Exterior HPL cladding, ventilated façades, architectural glazing, structural and spider glazing, glass canopies and skylights, CNC façade screens, balcony infill panels, interior architectural HPL
 - Showroom: M.N.S Arcade, Dr. Rajkumar Road, 6th Block, Rajajinagar, Bengaluru 560010
 - Phone: +91 91080 42393 (Mr. Sagar) / +91 99801 11468 / +91 97404 22863
-- Completed projects: 3000+
 - Email: vtechbuildingsystems@gmail.com
 - Canonical: https://vtechfacades.com/
 
 ## Pages
 
 - [Home](https://vtechfacades.com/)
-- [About](https://vtechfacades.com/about.html)
-- [Systems](https://vtechfacades.com/systems.html)
-- [Materials](https://vtechfacades.com/materials.html)
 - [Projects](https://vtechfacades.com/projects.html)
+- [Solutions](https://vtechfacades.com/solutions.html)
+- [About Us](https://vtechfacades.com/about.html)
 - [Contact](https://vtechfacades.com/contact.html)

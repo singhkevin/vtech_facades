@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>VTech Facades | Exterior Cladding &amp; Facade Systems, Bengaluru</title>
-  <meta name="description" content="VTech Facades engineers exterior cladding and facade systems in Bengaluru: Fundermax rainscreens, balcony panels, architectural finishes, and bespoke envelopes.">
+  <title>V-TECH Facades | Glazing and Exterior Cladding Contractor in Bangalore</title>
+  <meta name="description" content="V-TECH Building Systems provides architectural glazing, Fundermax HPL cladding, ventilated façades, glass canopies, skylights and customised façade solutions in Bangalore.">
   <meta name="theme-color" content="#254985">
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -15,17 +15,57 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="VTech">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="canonical" href="https://vtechfacades.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=colourway1">
+  <link rel="stylesheet" href="styles.css?v=m7">
+  <style>
+    .hero-brand-title {
+      position: absolute;
+      left: clamp(28px, 8vw, 110px);
+      top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 18px);
+      z-index: 3;
+      margin: 0;
+      max-width: 16ch;
+      font-family: "Cormorant", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(22px, 3.2vw, 34px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #f7f4ee;
+      text-shadow: 0 1px 14px rgba(21, 35, 63, 0.4);
+    }
+    @media (max-width: 960px) {
+      .hero-brand-title {
+        left: 20px;
+        font-size: 20px;
+        max-width: min(52vw, 16ch);
+        top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 12px);
+      }
+    }
+    @media (max-width: 640px) {
+      .hero-brand-title {
+        left: 16px;
+        font-size: 18px;
+        max-width: min(72vw, 14ch);
+        top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 8px);
+      }
+      .header-end .inquire { display: none !important; }
+      .slide-lead,
+      .hero-desc { display: none !important; }
+      .slide-copy .hero-secondary { display: none !important; }
+      .split-headline { font-size: clamp(28px, 8.4vw, 36px) !important; margin-bottom: 12px; }
+      .slide-copy { left: 16px; right: 16px; bottom: calc(58px + 56px); }
+    }
+  </style>
   <link rel="preload" as="image" href="images/hero-01-envelopes.png">
 </head>
 <body>
   <div class="curtain" id="curtain" aria-hidden="true">
     <div class="curtain-panel left"></div>
     <div class="curtain-panel right"></div>
-    <div class="curtain-word" id="curtain-word">VTech Facades</div>
+    <div class="curtain-word" id="curtain-word">V-TECH Facades</div>
   </div>
 
   <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
@@ -37,33 +77,35 @@
       <a href="index.html" class="brand" data-cursor="hover">
         <span class="brand-glyph" aria-hidden="true"></span>
         <span>
-          <span class="brand-name">VTech Facades</span>
+          <span class="brand-name">V-TECH Facades</span>
           <span class="brand-sub">Bengaluru</span>
         </span>
       </a>
       <nav class="mono-nav" aria-label="Primary">
-        <a href="projects.html" data-cursor="hover"><i>01</i> Works</a>
-        <a href="systems.html" data-cursor="hover"><i>02</i> Systems</a>
-        <a href="about.html" data-cursor="hover"><i>03</i> About</a>
-        <a href="contact.html" data-cursor="hover"><i>04</i> Contact</a>
+        <a href="index.html" class="is-active" data-cursor="hover">Home</a>
+        <a href="projects.html" data-cursor="hover">Projects</a>
+        <a href="solutions.html" data-cursor="hover">Solutions</a>
+        <a href="about.html" data-cursor="hover">About Us</a>
+        <a href="contact.html" data-cursor="hover">Contact</a>
       </nav>
       <div class="header-end">
-        <button type="button" class="spec-pill" id="open-spec-nav" data-cursor="hover">Spec box <b class="spec-count" id="spec-count">0</b></button>
-        <button type="button" class="inquire" data-inquire-open data-source-cta="header" data-cursor="hover">Inquire</button>
+        <button type="button" class="inquire" data-inquire-open data-source-cta="header" data-cursor="hover">Discuss Your Project</button>
         <button class="nav-lines" id="nav-toggle" type="button" aria-label="Menu"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <nav class="mobile-chapters" id="mobile-nav">
-    <a href="projects.html">01 Works</a>
-    <a href="systems.html">02 Systems</a>
-    <a href="about.html">03 About</a>
-    <a href="contact.html">04 Contact</a>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <main>
     <section class="hero" id="hero">
+      <h1 class="hero-brand-title">Building Façades with Precision.</h1>
       <div class="hero-slides" id="hero-slides">
         <article class="hero-slide is-active" data-slide="0">
           <div class="slide-media">
@@ -71,9 +113,13 @@
           </div>
           <div class="slide-shade"></div>
           <div class="slide-copy">
-            <p class="chap-label"><span>01</span> High-rise structural envelopes</p>
-            <h1 class="split-headline">Defining the urban horizon.</h1>
-            <p class="slide-lead">Unitized double-skin glass envelopes for metropolitan towers. Engineered stillness under extreme wind.</p>
+            <p class="chap-label"><span>01</span> Exterior Cladding</p>
+            <h2 class="split-headline">Distinctive Surfaces. Durable Façades.</h2>
+            <p class="slide-lead">Fundermax HPL cladding and ventilated façade solutions designed for contemporary buildings and Indian weather conditions.</p>
+            <div class="hero-actions">
+              <button type="button" class="inquire" data-inquire-open data-source-cta="hero-primary" data-cursor="hover">Discuss Your Project</button>
+              <a class="hero-secondary" href="projects.html" data-cursor="hover">View Our Projects</a>
+            </div>
           </div>
         </article>
         <article class="hero-slide" data-slide="1">
@@ -82,9 +128,13 @@
           </div>
           <div class="slide-shade"></div>
           <div class="slide-copy">
-            <p class="chap-label"><span>02</span> Parametric sculptural metals</p>
-            <h1 class="split-headline">Where impossible curves become real.</h1>
-            <p class="slide-lead">Double-curved geometries, robotic forming, and chemical patinas — napkin sketch to landmark skin.</p>
+            <p class="chap-label"><span>02</span> Architectural Glazing</p>
+            <h2 class="split-headline">Glass Solutions Engineered Around Your Building.</h2>
+            <p class="slide-lead">Customised glazing solutions for façades, entrances, commercial spaces, residences, canopies and skylights.</p>
+            <div class="hero-actions">
+              <button type="button" class="inquire" data-inquire-open data-source-cta="hero-primary" data-cursor="hover">Discuss Your Project</button>
+              <a class="hero-secondary" href="projects.html" data-cursor="hover">View Our Projects</a>
+            </div>
           </div>
         </article>
         <article class="hero-slide" data-slide="2">
@@ -93,385 +143,205 @@
           </div>
           <div class="slide-shade"></div>
           <div class="slide-copy">
-            <p class="chap-label"><span>03</span> Bio-climatic kinetic façades</p>
-            <h1 class="split-headline">Shading in harmony with the sun.</h1>
-            <p class="slide-lead">Motorized aerofoils tracking solar telemetry — daylight held, cooling load released.</p>
+            <p class="chap-label"><span>03</span> Custom Façade Systems</p>
+            <h2 class="split-headline">From Architectural Concept to Installed Elevation.</h2>
+            <p class="slide-lead">Design coordination, material selection, detailing, fabrication support and professional installation under one roof.</p>
+            <div class="hero-actions">
+              <button type="button" class="inquire" data-inquire-open data-source-cta="hero-primary" data-cursor="hover">Discuss Your Project</button>
+              <a class="hero-secondary" href="projects.html" data-cursor="hover">View Our Projects</a>
+            </div>
           </div>
         </article>
       </div>
 
-      <aside class="hero-badge" aria-label="Company milestone">
+      <aside class="hero-badge" aria-label="Practice focus">
         <span class="badge-mark"></span>
         <div>
-          <strong>30<sup>th</sup></strong>
-          <em>1996 — 2026</em>
+          <strong>Façade · Glazing · Cladding</strong>
+          <em>Residential · Commercial · Institutional</em>
         </div>
       </aside>
 
       <div class="hero-tabs" id="hero-tabs">
-        <button class="is-on" data-i="0" type="button"><span>01</span> Towers &amp; curtain walls<div class="fill"></div></button>
-        <button data-i="1" type="button"><span>02</span> Sculptural metal<div class="fill"></div></button>
-        <button data-i="2" type="button"><span>03</span> Kinetic climate<div class="fill"></div></button>
+        <button class="is-on" data-i="0" type="button"><span>01</span> Exterior cladding<div class="fill"></div></button>
+        <button data-i="1" type="button"><span>02</span> Architectural glazing<div class="fill"></div></button>
+        <button data-i="2" type="button"><span>03</span> Custom façade systems<div class="fill"></div></button>
       </div>
     </section>
 
-    <section class="ticker-section" aria-label="Collaborators and Specified Elevations">
+    <section class="ticker-section" aria-label="Project sectors">
       <div class="ticker-header">
         <span class="ticker-eyebrow">
           <span class="ticker-dot"></span>
-          Collaborations &amp; Specified Elevations
+          Project sectors
         </span>
-        <p class="ticker-sub">Trusted by leading architectural studios, facade consultants &amp; enterprise developers.</p>
+        <p class="ticker-sub">Solutions for diverse building types.</p>
       </div>
       <div class="ticker">
         <div class="ticker-track">
           <div class="ticker-group">
-            <div class="client-card" style="--brand-color:#E03C31;">
+            <div class="client-card" style="--brand-color:#C4A574;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <polygon points="16,3 29,26 3,26" stroke="#E03C31" stroke-width="2.2" fill="none"/>
-                  <polygon points="16,9 24,23 8,23" fill="#E03C31" fill-opacity="0.25" stroke="#E03C31" stroke-width="1.2"/>
-                  <circle cx="16" cy="18" r="3" fill="#E03C31"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 26V14l10-8 10 8v12H6z" stroke="#C4A574" stroke-width="1.8"/><path d="M13 26v-8h6v8" stroke="#C4A574" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Foster + Partners</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Villas and residences</span>
+                <span class="client-type">Residential</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#00B4B6;">
+            <div class="client-card" style="--brand-color:#254985;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <path d="M5 8h16l-10 16h16" stroke="#00B4B6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 4l15 12-15 12" stroke="#00D2D4" stroke-width="1.6" stroke-linecap="round" opacity="0.65"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="6" y="10" width="20" height="16" stroke="#254985" stroke-width="1.8"/><path d="M10 14h2M16 14h2M22 14h2M10 19h2M16 19h2M22 19h2" stroke="#254985" stroke-width="1.6"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Zaha Hadid Architects</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Apartment developments</span>
+                <span class="client-type">Housing</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#EE2726;">
+            <div class="client-card" style="--brand-color:#8B4A2B;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#EE2726"/>
-                  <text x="16" y="23" font-family="'Montserrat', sans-serif" font-size="20" font-weight="800" text-anchor="middle" fill="#FFFFFF">G</text>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 26V12h8V8h6v4h8v14H5z" stroke="#8B4A2B" stroke-width="1.8"/><path d="M16 26v-8" stroke="#8B4A2B" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Gensler</span>
-                <span class="client-type">Global Design</span>
+                <span class="client-name">Commercial buildings</span>
+                <span class="client-type">Commercial</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#E21836;">
+            <div class="client-card" style="--brand-color:#2F4F55;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <circle cx="16" cy="16" r="14" fill="#E21836"/>
-                  <path d="M11 20.5v-6a3 3 0 0 1 6 0v6m-6-3h6m4 3v-9" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="7" y="7" width="18" height="18" stroke="#2F4F55" stroke-width="1.8"/><path d="M7 16h18M16 7v18" stroke="#2F4F55" stroke-width="1.6"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Arup</span>
-                <span class="client-type">Engineering</span>
+                <span class="client-name">Corporate offices</span>
+                <span class="client-type">Workplace</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#1E88E5;">
+            <div class="client-card" style="--brand-color:#B8956A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect x="4" y="6" width="6" height="20" rx="1" fill="#1E88E5"/>
-                  <rect x="13" y="6" width="6" height="20" rx="1" fill="#42A5F5"/>
-                  <rect x="22" y="6" width="6" height="20" rx="1" fill="#90CAF9"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 24h20M8 24V12l8-4 8 4v12" stroke="#B8956A" stroke-width="1.8"/><path d="M14 24v-6h4v6" stroke="#B8956A" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">SOM</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Retail and showrooms</span>
+                <span class="client-type">Retail</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#FFD700;">
+            <div class="client-card" style="--brand-color:#6B4C7A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <path d="M16 3l12 7v12l-12 7-12-7V10z" fill="#FFD700"/>
-                  <path d="M16 3l12 7-12 7-12-7z" fill="#FFE552"/>
-                  <path d="M16 17v14l12-7V10z" fill="#E5C100"/>
-                  <text x="16" y="22" font-family="'Montserrat', sans-serif" font-size="9" font-weight="900" text-anchor="middle" fill="#111">BIG</text>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 22h20v4H6zM8 22V12h16v10M12 12V8h8v4" stroke="#6B4C7A" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">BIG</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Hotels and hospitality</span>
+                <span class="client-type">Hospitality</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#FF1B2D;">
+            <div class="client-card" style="--brand-color:#3D6B5A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#FF1B2D"/>
-                  <text x="16" y="21" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="900" letter-spacing="-0.04em" text-anchor="middle" fill="#FFFFFF">WSP</text>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="10" stroke="#3D6B5A" stroke-width="1.8"/><path d="M16 10v12M10 16h12" stroke="#3D6B5A" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">WSP</span>
-                <span class="client-type">Engineering</span>
+                <span class="client-name">Healthcare facilities</span>
+                <span class="client-type">Institutional</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#FFB800;">
+            <div class="client-card" style="--brand-color:#254985;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <circle cx="16" cy="16" r="14" fill="#18132A"/>
-                  <circle cx="16" cy="8" r="2.5" fill="#FFB800"/>
-                  <circle cx="23" cy="13" r="2.5" fill="#FFB800"/>
-                  <circle cx="23" cy="21" r="2.5" fill="#FFB800"/>
-                  <circle cx="16" cy="24" r="2.5" fill="#FFB800"/>
-                  <circle cx="9" cy="21" r="2.5" fill="#FFB800"/>
-                  <circle cx="9" cy="13" r="2.5" fill="#FFB800"/>
-                  <circle cx="16" cy="16" r="3.2" fill="#FFA000"/>
-                  <path d="M16 8l7 5-7 3-7-3zM16 24l7-3-7-5-7 5z" stroke="#FFB800" stroke-width="1.2" fill="none"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 24V12l8-5 8 5v12H8z" stroke="#254985" stroke-width="1.8"/><path d="M13 24v-7h6v7" stroke="#254985" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Buro Happold</span>
-                <span class="client-type">Engineering</span>
+                <span class="client-name">Schools and campuses</span>
+                <span class="client-type">Education</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#004B87;">
+            <div class="client-card" style="--brand-color:#7A5A3A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#004B87"/>
-                  <path d="M7 11h9m-4.5 0v12M16 11h9m-4.5 0v12" stroke="#00A3E0" stroke-width="2.6" stroke-linecap="round"/>
-                  <circle cx="11.5" cy="11" r="1.5" fill="#FFFFFF"/>
-                  <circle cx="20.5" cy="11" r="1.5" fill="#FFFFFF"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 24h22M7 24V14h6v10M15 24V10h12v14" stroke="#7A5A3A" stroke-width="1.8"/><path d="M19 14h4M19 18h4" stroke="#7A5A3A" stroke-width="1.6"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Thornton Tomasetti</span>
-                <span class="client-type">Facade Consulting</span>
-              </div>
-            </div>
-
-            <div class="client-card" style="--brand-color:#DC2626;">
-              <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#DC2626"/>
-                  <text x="16" y="21" font-family="'Montserrat', sans-serif" font-size="11" font-weight="900" letter-spacing="0.02em" text-anchor="middle" fill="#FFFFFF">KPF</text>
-                </svg>
-              </div>
-              <div class="client-info">
-                <span class="client-name">KPF</span>
-                <span class="client-type">Architecture</span>
-              </div>
-            </div>
-
-            <div class="client-card" style="--brand-color:#EA580C;">
-              <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#0F172A"/>
-                  <circle cx="16" cy="16" r="11" stroke="#EA580C" stroke-width="1.5"/>
-                  <path d="M11 19l2.5-6L16 16l2.5-3 2.5 6H11z" fill="#F97316"/>
-                  <circle cx="16" cy="10" r="1.5" fill="#FBBF24"/>
-                </svg>
-              </div>
-              <div class="client-info">
-                <span class="client-name">Embassy Group</span>
-                <span class="client-type">Tech Campuses</span>
-              </div>
-            </div>
-
-            <div class="client-card" style="--brand-color:#059669;">
-              <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#064E3B"/>
-                  <path d="M8 24l6-14v14H8z" fill="#10B981"/>
-                  <path d="M16 24l8-17v17h-8z" fill="#34D399"/>
-                  <circle cx="20" cy="9" r="1.8" fill="#F59E0B"/>
-                </svg>
-              </div>
-              <div class="client-info">
-                <span class="client-name">Salarpuria Sattva</span>
-                <span class="client-type">Commercial High-Rise</span>
+                <span class="client-name">Industrial buildings</span>
+                <span class="client-type">Industrial</span>
               </div>
             </div>
           </div>
-
-          <!-- Seamless duplicate for continuous infinite animation -->
           <div class="ticker-group" aria-hidden="true">
-            <div class="client-card" style="--brand-color:#E03C31;">
+            <div class="client-card" style="--brand-color:#C4A574;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <polygon points="16,3 29,26 3,26" stroke="#E03C31" stroke-width="2.2" fill="none"/>
-                  <polygon points="16,9 24,23 8,23" fill="#E03C31" fill-opacity="0.25" stroke="#E03C31" stroke-width="1.2"/>
-                  <circle cx="16" cy="18" r="3" fill="#E03C31"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><path d="M6 26V14l10-8 10 8v12H6z" stroke="#C4A574" stroke-width="1.8"/><path d="M13 26v-8h6v8" stroke="#C4A574" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Foster + Partners</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Villas and residences</span>
+                <span class="client-type">Residential</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#00B4B6;">
+            <div class="client-card" style="--brand-color:#254985;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <path d="M5 8h16l-10 16h16" stroke="#00B4B6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M12 4l15 12-15 12" stroke="#00D2D4" stroke-width="1.6" stroke-linecap="round" opacity="0.65"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><rect x="6" y="10" width="20" height="16" stroke="#254985" stroke-width="1.8"/><path d="M10 14h2M16 14h2M22 14h2M10 19h2M16 19h2M22 19h2" stroke="#254985" stroke-width="1.6"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Zaha Hadid Architects</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Apartment developments</span>
+                <span class="client-type">Housing</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#EE2726;">
+            <div class="client-card" style="--brand-color:#8B4A2B;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#EE2726"/>
-                  <text x="16" y="23" font-family="'Montserrat', sans-serif" font-size="20" font-weight="800" text-anchor="middle" fill="#FFFFFF">G</text>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><path d="M5 26V12h8V8h6v4h8v14H5z" stroke="#8B4A2B" stroke-width="1.8"/><path d="M16 26v-8" stroke="#8B4A2B" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Gensler</span>
-                <span class="client-type">Global Design</span>
+                <span class="client-name">Commercial buildings</span>
+                <span class="client-type">Commercial</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#E21836;">
+            <div class="client-card" style="--brand-color:#2F4F55;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <circle cx="16" cy="16" r="14" fill="#E21836"/>
-                  <path d="M11 20.5v-6a3 3 0 0 1 6 0v6m-6-3h6m4 3v-9" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><rect x="7" y="7" width="18" height="18" stroke="#2F4F55" stroke-width="1.8"/><path d="M7 16h18M16 7v18" stroke="#2F4F55" stroke-width="1.6"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Arup</span>
-                <span class="client-type">Engineering</span>
+                <span class="client-name">Corporate offices</span>
+                <span class="client-type">Workplace</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#1E88E5;">
+            <div class="client-card" style="--brand-color:#B8956A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect x="4" y="6" width="6" height="20" rx="1" fill="#1E88E5"/>
-                  <rect x="13" y="6" width="6" height="20" rx="1" fill="#42A5F5"/>
-                  <rect x="22" y="6" width="6" height="20" rx="1" fill="#90CAF9"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><path d="M6 24h20M8 24V12l8-4 8 4v12" stroke="#B8956A" stroke-width="1.8"/><path d="M14 24v-6h4v6" stroke="#B8956A" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">SOM</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Retail and showrooms</span>
+                <span class="client-type">Retail</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#FFD700;">
+            <div class="client-card" style="--brand-color:#6B4C7A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <path d="M16 3l12 7v12l-12 7-12-7V10z" fill="#FFD700"/>
-                  <path d="M16 3l12 7-12 7-12-7z" fill="#FFE552"/>
-                  <path d="M16 17v14l12-7V10z" fill="#E5C100"/>
-                  <text x="16" y="22" font-family="'Montserrat', sans-serif" font-size="9" font-weight="900" text-anchor="middle" fill="#111">BIG</text>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><path d="M6 22h20v4H6zM8 22V12h16v10M12 12V8h8v4" stroke="#6B4C7A" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">BIG</span>
-                <span class="client-type">Architecture</span>
+                <span class="client-name">Hotels and hospitality</span>
+                <span class="client-type">Hospitality</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#FF1B2D;">
+            <div class="client-card" style="--brand-color:#3D6B5A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#FF1B2D"/>
-                  <text x="16" y="21" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="900" letter-spacing="-0.04em" text-anchor="middle" fill="#FFFFFF">WSP</text>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="#3D6B5A" stroke-width="1.8"/><path d="M16 10v12M10 16h12" stroke="#3D6B5A" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">WSP</span>
-                <span class="client-type">Engineering</span>
+                <span class="client-name">Healthcare facilities</span>
+                <span class="client-type">Institutional</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#FFB800;">
+            <div class="client-card" style="--brand-color:#254985;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <circle cx="16" cy="16" r="14" fill="#18132A"/>
-                  <circle cx="16" cy="8" r="2.5" fill="#FFB800"/>
-                  <circle cx="23" cy="13" r="2.5" fill="#FFB800"/>
-                  <circle cx="23" cy="21" r="2.5" fill="#FFB800"/>
-                  <circle cx="16" cy="24" r="2.5" fill="#FFB800"/>
-                  <circle cx="9" cy="21" r="2.5" fill="#FFB800"/>
-                  <circle cx="9" cy="13" r="2.5" fill="#FFB800"/>
-                  <circle cx="16" cy="16" r="3.2" fill="#FFA000"/>
-                  <path d="M16 8l7 5-7 3-7-3zM16 24l7-3-7-5-7 5z" stroke="#FFB800" stroke-width="1.2" fill="none"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><path d="M8 24V12l8-5 8 5v12H8z" stroke="#254985" stroke-width="1.8"/><path d="M13 24v-7h6v7" stroke="#254985" stroke-width="1.8"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Buro Happold</span>
-                <span class="client-type">Engineering</span>
+                <span class="client-name">Schools and campuses</span>
+                <span class="client-type">Education</span>
               </div>
             </div>
-
-            <div class="client-card" style="--brand-color:#004B87;">
+            <div class="client-card" style="--brand-color:#7A5A3A;">
               <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#004B87"/>
-                  <path d="M7 11h9m-4.5 0v12M16 11h9m-4.5 0v12" stroke="#00A3E0" stroke-width="2.6" stroke-linecap="round"/>
-                  <circle cx="11.5" cy="11" r="1.5" fill="#FFFFFF"/>
-                  <circle cx="20.5" cy="11" r="1.5" fill="#FFFFFF"/>
-                </svg>
+                <svg class="client-svg" viewBox="0 0 32 32" fill="none"><path d="M5 24h22M7 24V14h6v10M15 24V10h12v14" stroke="#7A5A3A" stroke-width="1.8"/><path d="M19 14h4M19 18h4" stroke="#7A5A3A" stroke-width="1.6"/></svg>
               </div>
               <div class="client-info">
-                <span class="client-name">Thornton Tomasetti</span>
-                <span class="client-type">Facade Consulting</span>
-              </div>
-            </div>
-
-            <div class="client-card" style="--brand-color:#DC2626;">
-              <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#DC2626"/>
-                  <text x="16" y="21" font-family="'Montserrat', sans-serif" font-size="11" font-weight="900" letter-spacing="0.02em" text-anchor="middle" fill="#FFFFFF">KPF</text>
-                </svg>
-              </div>
-              <div class="client-info">
-                <span class="client-name">KPF</span>
-                <span class="client-type">Architecture</span>
-              </div>
-            </div>
-
-            <div class="client-card" style="--brand-color:#EA580C;">
-              <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#0F172A"/>
-                  <circle cx="16" cy="16" r="11" stroke="#EA580C" stroke-width="1.5"/>
-                  <path d="M11 19l2.5-6L16 16l2.5-3 2.5 6H11z" fill="#F97316"/>
-                  <circle cx="16" cy="10" r="1.5" fill="#FBBF24"/>
-                </svg>
-              </div>
-              <div class="client-info">
-                <span class="client-name">Embassy Group</span>
-                <span class="client-type">Tech Campuses</span>
-              </div>
-            </div>
-
-            <div class="client-card" style="--brand-color:#059669;">
-              <div class="client-logo-box">
-                <svg class="client-svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <rect width="32" height="32" rx="6" fill="#064E3B"/>
-                  <path d="M8 24l6-14v14H8z" fill="#10B981"/>
-                  <path d="M16 24l8-17v17h-8z" fill="#34D399"/>
-                  <circle cx="20" cy="9" r="1.8" fill="#F59E0B"/>
-                </svg>
-              </div>
-              <div class="client-info">
-                <span class="client-name">Salarpuria Sattva</span>
-                <span class="client-type">Commercial High-Rise</span>
+                <span class="client-name">Industrial buildings</span>
+                <span class="client-type">Industrial</span>
               </div>
             </div>
           </div>
@@ -482,7 +352,8 @@
     <section class="parallax" id="parallax">
       <div class="parallax-grid" aria-hidden="true"></div>
       <div class="parallax-vignette" aria-hidden="true"></div>
-      <p class="chap-label reveal-label"><span>Intelligence</span> At rest</p>
+      <p class="chap-label reveal-label"><span>01</span> About V-TECH</p>
+      <h2 class="visually-hidden">Integrated Façade Solutions for Modern Architecture.</h2>
       <div class="aura-mark" aria-hidden="true">
         <img src="images/vtech-logo.png" alt="" width="1024" height="995" decoding="async">
       </div>
@@ -491,11 +362,11 @@
           <div class="p-claim">
             <div class="p-line">
               <span class="p-orbit" aria-hidden="true"></span>
-              <span class="p-word"><b>precision</b></span>
+              <span class="p-word"><b>integrated</b></span>
             </div>
             <div class="p-meta">
-              <i>engineered to millimetre tolerances</i>
-              <span class="p-spec">±1.5 mm</span>
+              <i>Bangalore-based façade company for architects, builders and owners</i>
+              <span class="p-spec">Bengaluru</span>
             </div>
             <span class="p-ticks" aria-hidden="true"></span>
           </div>
@@ -507,17 +378,17 @@
               <span class="vf vf-br"></span>
               <div class="p-plate-img" style="background-image:url('images/project-01.jpeg')"></div>
             </div>
-            <figcaption class="visually-hidden">Jointed rainscreen volumes, aligned to millimetre tolerances.</figcaption>
+            <figcaption class="visually-hidden">Street elevation with coordinated cladding and glazing.</figcaption>
           </figure>
         </div>
         <div class="p-row p2">
           <div class="p-claim">
             <div class="p-line">
-              <span class="p-word"><b>performance</b></span>
+              <span class="p-word"><b>solutions</b></span>
             </div>
             <div class="p-meta">
-              <i>thermal, acoustic &amp; structural excellence</i>
-              <span class="p-spec">U 0.78</span>
+              <i>HPL cladding, ventilated façades, glazing, screens and interiors</i>
+              <span class="p-spec">Full scope</span>
             </div>
             <span class="p-ticks" aria-hidden="true"></span>
           </div>
@@ -529,17 +400,17 @@
               <span class="vf vf-br"></span>
               <div class="p-plate-img" style="background-image:url('images/project-15.jpeg')"></div>
             </div>
-            <figcaption class="visually-hidden">Vertical fins and glazing — daylight held, cooling load released.</figcaption>
+            <figcaption class="visually-hidden">Vertical fins and glazing on a V-TECH elevation.</figcaption>
           </figure>
         </div>
         <div class="p-row p3">
           <div class="p-claim">
             <div class="p-line">
-              <span class="p-word"><b>longevity</b></span>
+              <span class="p-word"><b>support</b></span>
             </div>
             <div class="p-meta">
-              <i>envelopes built to outlast their buildings</i>
-              <span class="p-spec">50-yr</span>
+              <i>selection, coordination, site measurement, execution and inspection</i>
+              <span class="p-spec">One team</span>
             </div>
             <span class="p-ticks" aria-hidden="true"></span>
           </div>
@@ -551,7 +422,7 @@
               <span class="vf vf-br"></span>
               <div class="p-plate-img" style="background-image:url('images/project-14.jpeg')"></div>
             </div>
-            <figcaption class="visually-hidden">Installed mixed-material skin with jali screens, built to last.</figcaption>
+            <figcaption class="visually-hidden">Installed mixed-material skin with screens, delivered by V-TECH.</figcaption>
           </figure>
         </div>
       </div>
@@ -576,23 +447,41 @@
           <span class="vf vf-br"></span>
         </div>
         <header class="works-head">
-          <p class="chap-label reveal-label"><span>02</span> Featured works</p>
-          <h2 class="reveal-head">Landmark envelopes, delivered.</h2>
+          <p class="chap-label reveal-label"><span>02</span> Selected projects</p>
+          <h2 class="reveal-head">Façades Delivered Across<br>Residential and Commercial Architecture.</h2>
+          <p class="works-intro">Explore selected V-TECH projects featuring exterior cladding, architectural glazing, custom screens and coordinated façade applications.</p>
+          <a class="works-all" href="projects.html" data-cursor="hover">View All Projects</a>
         </header>
         <div class="works-reel-slot">
           <div class="reel" id="reel">
             <article class="proj is-active">
               <div class="proj-tilt" data-tilt>
                 <div class="proj-media">
+                  <div class="proj-img" style="background-image:url('images/project-01.jpeg')"></div>
+                </div>
+                <div class="proj-copy">
+                  <h3>Street elevation</h3>
+                  <p>Exterior cladding and architectural glazing</p>
+                  <dl class="proj-meta">
+                    <div><dt>Scope</dt><dd>HPL + glazing</dd></div>
+                    <div><dt>City</dt><dd>Bengaluru</dd></div>
+                    <div><dt>Type</dt><dd>Commercial</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </article>
+            <article class="proj">
+              <div class="proj-tilt" data-tilt>
+                <div class="proj-media">
                   <div class="proj-img" style="background-image:url('images/project-03.jpeg')"></div>
                 </div>
                 <div class="proj-copy">
-                  <h3>Residence #49</h3>
-                  <p>Multi-material rainscreen &amp; jali screens</p>
+                  <h3>Residence 149</h3>
+                  <p>HPL cladding and CNC façade screens</p>
                   <dl class="proj-meta">
-                    <div><dt>System</dt><dd>HPL rainscreen</dd></div>
+                    <div><dt>Scope</dt><dd>Cladding + screens</dd></div>
                     <div><dt>City</dt><dd>Bengaluru</dd></div>
-                    <div><dt>Year</dt><dd>2024</dd></div>
+                    <div><dt>Type</dt><dd>Residential</dd></div>
                   </dl>
                 </div>
               </div>
@@ -600,15 +489,15 @@
             <article class="proj">
               <div class="proj-tilt" data-tilt>
                 <div class="proj-media">
-                  <div class="proj-img" style="background-image:url('images/project-06.jpeg')"></div>
+                  <div class="proj-img" style="background-image:url('images/project-05.jpeg')"></div>
                 </div>
                 <div class="proj-copy">
-                  <h3>Corner elevation</h3>
-                  <p>Wood-look cladding &amp; glass curtain bay</p>
+                  <h3>Independent residence</h3>
+                  <p>Exterior HPL cladding</p>
                   <dl class="proj-meta">
-                    <div><dt>System</dt><dd>HPL soffit</dd></div>
+                    <div><dt>Scope</dt><dd>HPL cladding</dd></div>
                     <div><dt>City</dt><dd>Bengaluru</dd></div>
-                    <div><dt>Year</dt><dd>2023</dd></div>
+                    <div><dt>Type</dt><dd>Residential</dd></div>
                   </dl>
                 </div>
               </div>
@@ -616,15 +505,15 @@
             <article class="proj">
               <div class="proj-tilt" data-tilt>
                 <div class="proj-media">
-                  <div class="proj-img" style="background-image:url('images/project-08.jpeg')"></div>
+                  <div class="proj-img" style="background-image:url('images/project-11.jpeg')"></div>
                 </div>
                 <div class="proj-copy">
-                  <h3>Layered villa skin</h3>
-                  <p>Stone, timber louvres &amp; framed balconies</p>
+                  <h3>Nithesh Nilaya</h3>
+                  <p>Cladding, glazing and vertical fins</p>
                   <dl class="proj-meta">
-                    <div><dt>System</dt><dd>Mixed cladding</dd></div>
+                    <div><dt>Scope</dt><dd>Mixed façade</dd></div>
                     <div><dt>City</dt><dd>Bengaluru</dd></div>
-                    <div><dt>Year</dt><dd>2024</dd></div>
+                    <div><dt>Type</dt><dd>Residential</dd></div>
                   </dl>
                 </div>
               </div>
@@ -632,38 +521,22 @@
             <article class="proj">
               <div class="proj-tilt" data-tilt>
                 <div class="proj-media">
-                  <div class="proj-img" style="background-image:url('images/project-09.jpeg')"></div>
+                  <div class="proj-img" style="background-image:url('images/project-07.jpeg')"></div>
                 </div>
                 <div class="proj-copy">
-                  <h3>Stone &amp; panel villa</h3>
-                  <p>Travertine look with deep composite bands</p>
+                  <h3>Interior HPL lining</h3>
+                  <p>Wall panels and woodgrain soffit</p>
                   <dl class="proj-meta">
-                    <div><dt>System</dt><dd>Panel + stone</dd></div>
+                    <div><dt>Scope</dt><dd>Interior HPL</dd></div>
                     <div><dt>City</dt><dd>Bengaluru</dd></div>
-                    <div><dt>Year</dt><dd>2022</dd></div>
-                  </dl>
-                </div>
-              </div>
-            </article>
-            <article class="proj">
-              <div class="proj-tilt" data-tilt>
-                <div class="proj-media">
-                  <div class="proj-img" style="background-image:url('images/project-13.jpeg')"></div>
-                </div>
-                <div class="proj-copy">
-                  <h3>Louvred glass front</h3>
-                  <p>Vertical privacy screens &amp; wood-grain frames</p>
-                  <dl class="proj-meta">
-                    <div><dt>System</dt><dd>Louvres + HPL</dd></div>
-                    <div><dt>City</dt><dd>Bengaluru</dd></div>
-                    <div><dt>Year</dt><dd>2025</dd></div>
+                    <div><dt>Type</dt><dd>Residential</dd></div>
                   </dl>
                 </div>
               </div>
             </article>
           </div>
         </div>
-        <nav class="works-progress" aria-label="Works progress">
+        <nav class="works-progress" aria-label="Projects progress">
           <p class="works-progress-count"><span id="works-current">01</span><i>/</i><span id="works-total">05</span></p>
           <div class="works-progress-track">
             <div class="works-progress-fill" id="works-fill"></div>
@@ -674,66 +547,57 @@
     </section>
 
     <section class="fmax-dominant" id="fundermax">
-      <!-- Ambient kinetic backdrop & watermark -->
       <div class="fmax-stage-bg" aria-hidden="true">
         <div class="fmax-grid-lines"></div>
         <div class="fmax-ambient-glow"></div>
         <div class="fmax-watermark">FUNDERMAX</div>
       </div>
 
-      <!-- LAYER 1: MONUMENTAL CO-BRAND MARQUEE -->
       <header class="fmax-monument">
         <div class="fmax-badge-row">
           <span class="fmax-pill fmax-pill-live">
             <span class="fmax-live-dot" aria-hidden="true"></span>
-            Official Business Partner · South India
+            Authorised Fundermax Partner in Bangalore
           </span>
-          <span class="fmax-pill fmax-pill-flag">
-            <span class="fmax-flag-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-            Direct Austrian Import ➔ In-House CNC Engineering
-          </span>
-          <span class="fmax-pill fmax-pill-count">
-            15+ Years · 15,000+ Panels Fabricated · EN 13501-1 Fire Certified
-          </span>
+          <span class="fmax-pill fmax-pill-flag">Rajajinagar Experience Centre</span>
+          <span class="fmax-pill fmax-pill-count">10-Year Fundermax Factory Warranty</span>
         </div>
 
         <div class="fmax-hero-lockup">
           <div class="fmax-brand-block">
-            <!-- Official Fundermax Partner Logo -->
             <img class="fmax-partner-logo-img" src="images/fundermax-partner-logo-white.png" alt="Fundermax — For you to create" width="934" height="214">
           </div>
           <div class="fmax-partner-badge-collab">
-            <div class="fmax-collab-label">Authorized South India Partner</div>
+            <div class="fmax-collab-label">Authorised Fundermax Partner in Bangalore</div>
             <div class="fmax-collab-row">
               <span class="fmax-collab-cross" aria-hidden="true">✕</span>
-              <strong>VTech Facades</strong>
+              <strong>V-TECH Facades</strong>
             </div>
-            <span class="fmax-collab-sub">Precision Engineering · In-House CNC · Certified Turnkey Installation</span>
+            <span class="fmax-collab-sub">Décor selection · Detailing · Installation</span>
           </div>
         </div>
 
         <div class="fmax-lead-row">
           <h2 class="fmax-headline">
-            Austrian exterior panels.<br>
-            <span>Precision-engineered &amp; installed by VTech.</span>
+            Premium Austrian Panels.<br>
+            <span>Professionally Executed by V-TECH.</span>
           </h2>
           <p class="fmax-sublead">
-            Authorized South India partner for Fundermax Austria. We engineer custom aluminium substructures, CNC-mill every panel in-house, and execute certified rear-ventilated rainscreens, balcony envelopes, and architectural louvers.
+            V-TECH is an authorised Fundermax partner in Bangalore, offering genuine exterior and interior HPL panels for architectural applications. Our team assists with décor selection, joint planning, substructure coordination, panel optimisation, fabrication and installation.
           </p>
         </div>
       </header>
 
-      <!-- LAYER 2: MAJOR LANDMARK PROJECTS CAROUSEL (PUSHED UP) -->
       <div class="fmax-carousel-section" id="fmax-projects">
         <div class="fmax-carousel-header">
           <div>
             <p class="chap-label"><span>03.1</span> Built architecture</p>
-            <h3 class="fmax-carousel-title">Landmark elevations specified with Fundermax.</h3>
-            <p class="fmax-carousel-sub">Commercial towers, tech campuses, and luxury residences engineered across India.</p>
+            <h3 class="fmax-carousel-title">V-TECH elevations specified with Fundermax.</h3>
+            <p class="fmax-carousel-sub">Selected Bangalore projects — cladding, screens and coordinated façades executed by our team.</p>
           </div>
           <div class="fmax-carousel-controls">
             <a href="projects.html" class="fmax-gallery-link" data-cursor="hover">
-              <span>Explore All 12+ Projects in Gallery</span>
+              <span>Explore the project gallery</span>
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <div class="fmax-counter" aria-live="polite">
@@ -754,86 +618,82 @@
 
         <div class="fmax-carousel-track-wrap" id="fmax-track-wrap">
           <div class="fmax-track" id="fmax-track">
-            <!-- Slide 1: Vinpack Industries (VTECH FLAGSHIP PROJECT) -->
             <article class="fmax-slide is-active" data-index="0">
               <div class="fmax-slide-media">
-                <img src="images/fmax/photos/vinpack.png" alt="Vinpack Industries Bangalore - CNC Perforated Facade by VTech" loading="lazy">
-                <span class="fmax-partner-tag fmax-partner-tag-vtech"><span class="fmax-live-dot" aria-hidden="true"></span> VTech Landmark Project</span>
+                <img src="images/project-01.jpeg" alt="Street elevation in Bengaluru with cladding and glazing by V-TECH" loading="lazy">
+                <span class="fmax-partner-tag fmax-partner-tag-vtech"><span class="fmax-live-dot" aria-hidden="true"></span> V-TECH project</span>
                 <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
                 <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
               </div>
               <div class="fmax-slide-body">
-                <div class="fmax-slide-eyebrow">Bangalore · Industrial Landmark</div>
-                <h4 class="fmax-slide-name">Vinpack Industries</h4>
-                <p class="fmax-slide-desc">Gradient CNC perforated rainscreen engineered and executed by VTech Facades with rear ventilation.</p>
+                <div class="fmax-slide-eyebrow">Bengaluru · Commercial</div>
+                <h4 class="fmax-slide-name">Street elevation</h4>
+                <p class="fmax-slide-desc">Exterior cladding coordinated with architectural glazing on a street-facing commercial elevation.</p>
                 <dl class="fmax-slide-specs">
-                  <div><dt>Application</dt><dd>CNC Rainscreen</dd></div>
-                  <div><dt>Architect</dt><dd>Ar. Vivek (OCD)</dd></div>
-                  <div><dt>Décor</dt><dd>0027 Prado Agate</dd></div>
-                  <div><dt>Partner</dt><dd class="highlight">VTech Facades</dd></div>
+                  <div><dt>Application</dt><dd>HPL + glazing</dd></div>
+                  <div><dt>City</dt><dd>Bengaluru</dd></div>
+                  <div><dt>Type</dt><dd>Commercial</dd></div>
+                  <div><dt>Partner</dt><dd class="highlight">V-TECH Facades</dd></div>
                 </dl>
               </div>
             </article>
 
-            <!-- Slide 2: Salarpuria Sattva Galleria (COMMERCIAL HIGH-RISE) -->
             <article class="fmax-slide" data-index="1">
               <div class="fmax-slide-media">
-                <img src="images/fmax/photos/sattva.png" alt="Salarpuria Sattva Galleria Bangalore - High-rise Fundermax Cladding" loading="lazy">
-                <span class="fmax-partner-tag">Commercial High-Rise</span>
+                <img src="images/project-03.jpeg" alt="Residence 149 in Bengaluru with HPL cladding and CNC screens" loading="lazy">
+                <span class="fmax-partner-tag">Residential</span>
                 <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
                 <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
               </div>
               <div class="fmax-slide-body">
-                <div class="fmax-slide-eyebrow">Bangalore · Landmark Tower</div>
-                <h4 class="fmax-slide-name">Salarpuria Sattva Galleria</h4>
-                <p class="fmax-slide-desc">Monolithic high-rise envelope combining solid white panels with structural curtain glazing.</p>
+                <div class="fmax-slide-eyebrow">Bengaluru · Residence</div>
+                <h4 class="fmax-slide-name">Residence 149</h4>
+                <p class="fmax-slide-desc">HPL cladding with CNC façade screens for privacy, shading and a distinctive residential elevation.</p>
                 <dl class="fmax-slide-specs">
-                  <div><dt>Application</dt><dd>Façade Cladding</dd></div>
-                  <div><dt>Architect</dt><dd>Sudhakar Pai Associates</dd></div>
-                  <div><dt>Décor</dt><dd>0085 NT &amp; NG White</dd></div>
-                  <div><dt>System</dt><dd>Modulo Concealed</dd></div>
+                  <div><dt>Application</dt><dd>Cladding + screens</dd></div>
+                  <div><dt>City</dt><dd>Bengaluru</dd></div>
+                  <div><dt>Type</dt><dd>Residential</dd></div>
+                  <div><dt>Partner</dt><dd class="highlight">V-TECH Facades</dd></div>
                 </dl>
               </div>
             </article>
 
-            <!-- Slide 3: Kalpataru Radiance, Mumbai (PARAMETRIC SKIN BY HAFEEZ CONTRACTOR) -->
             <article class="fmax-slide" data-index="2">
               <div class="fmax-slide-media">
-                <img src="images/fmax/photos/kalpataru.png" alt="Kalpataru Radiance Mumbai by Hafeez Contractor" loading="lazy">
-                <span class="fmax-partner-tag">Parametric Skin</span>
+                <img src="images/project-05.jpeg" alt="Independent residence in Bengaluru with exterior HPL cladding" loading="lazy">
+                <span class="fmax-partner-tag">HPL cladding</span>
                 <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
                 <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
               </div>
               <div class="fmax-slide-body">
-                <div class="fmax-slide-eyebrow">Mumbai · Luxury High-Rise</div>
-                <h4 class="fmax-slide-name">Kalpataru Radiance</h4>
-                <p class="fmax-slide-desc">Parametric 3D origami envelope designed by Hafeez Contractor in natural Austrian oak decors.</p>
+                <div class="fmax-slide-eyebrow">Bengaluru · Independent house</div>
+                <h4 class="fmax-slide-name">Independent residence</h4>
+                <p class="fmax-slide-desc">Exterior-grade HPL cladding selected, detailed and installed for a contemporary residential envelope.</p>
                 <dl class="fmax-slide-specs">
-                  <div><dt>Application</dt><dd>3D Geometric Façade</dd></div>
-                  <div><dt>Architect</dt><dd>Hafeez Contractor</dd></div>
-                  <div><dt>Décor</dt><dd>Barrique &amp; Oak</dd></div>
-                  <div><dt>Standard</dt><dd>EN 13501-1 Class B</dd></div>
+                  <div><dt>Application</dt><dd>HPL cladding</dd></div>
+                  <div><dt>City</dt><dd>Bengaluru</dd></div>
+                  <div><dt>Type</dt><dd>Residential</dd></div>
+                  <div><dt>Partner</dt><dd class="highlight">V-TECH Facades</dd></div>
                 </dl>
               </div>
             </article>
 
-            <!-- Slide 4: Beehive Residence, Bangalore (ARCHITECTURAL JALI VILLA) -->
             <article class="fmax-slide" data-index="3">
               <div class="fmax-slide-media">
-                <img src="images/fmax/photos/beehive.png" alt="Beehive Private Residence Bangalore" loading="lazy">
-                <span class="fmax-partner-tag">Luxury Residence</span>
+                <img src="images/project-11.jpeg" alt="Nithesh Nilaya in Bengaluru with cladding, glazing and vertical fins" loading="lazy">
+                <span class="fmax-partner-tag">Mixed façade</span>
                 <span class="fmax-corner-bracket tl"></span><span class="fmax-corner-bracket tr"></span>
                 <span class="fmax-corner-bracket bl"></span><span class="fmax-corner-bracket br"></span>
               </div>
               <div class="fmax-slide-body">
-                <div class="fmax-slide-eyebrow">Bangalore · Architectural Villa</div>
-                <h4 class="fmax-slide-name">Beehive Residence</h4>
-                <p class="fmax-slide-desc">Multi-tiered perforated terracotta privacy screens offering natural daylight filtration and thermal comfort.</p>
+                <div class="fmax-slide-eyebrow">Bengaluru · Residence</div>
+                <h4 class="fmax-slide-name">Nithesh Nilaya</h4>
+                <p class="fmax-slide-desc">Cladding, glazing and vertical fins coordinated as one elevation language.</p>
                 <dl class="fmax-slide-specs">
-                  <div><dt>Application</dt><dd>Perforated Jali Screen</dd></div>
-                  <div><dt>Architect</dt><dd>4site Architects</dd></div>
-                  <div><dt>Décor</dt><dd>0932 Akro Terra</dd></div>
-                  <div><dt>Feature</dt><dd>Daylight &amp; Privacy</dd></div>
+                  <div><dt>Application</dt><dd>Mixed façade</dd></div>
+                  <div><dt>City</dt><dd>Bengaluru</dd></div>
+                  <div><dt>Type</dt><dd>Residential</dd></div>
+                  <div><dt>Partner</dt><dd class="highlight">V-TECH Facades</dd></div>
                 </dl>
               </div>
             </article>
@@ -845,19 +705,17 @@
         </div>
       </div>
 
-      <!-- LAYER 3: WHY VTECH FACADES BUILDS WITH FUNDERMAX (SUPERIOR QUALITY) -->
       <div class="fmax-why-section">
         <div class="fmax-why-head">
           <div>
-            <p class="chap-label"><span>03.2</span> Superior quality</p>
-            <h3 class="fmax-why-title">Why VTech Facades builds with Fundermax.</h3>
+            <p class="chap-label"><span>03.2</span> Fundermax Solutions</p>
+            <h3 class="fmax-why-title">Why architects specify Fundermax with V-TECH.</h3>
           </div>
           <p class="fmax-why-desc">
-            Austria’s most resilient exterior panel, backed by our certified substructure engineering, in-house CNC milling, and precision installation.
+            Genuine Austrian panels, local product guidance, and installation handled by a Bangalore team that understands Indian site conditions.
           </p>
         </div>
 
-        <!-- 4 High-Tech Material Science Modules -->
         <div class="fmax-strengths-grid">
           <div class="fmax-strength-card">
             <div class="fmax-card-topbar">
@@ -866,12 +724,12 @@
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
               </div>
-              <span class="fmax-card-metric">ZERO FADING</span>
+              <span class="fmax-card-metric">SAMPLES</span>
             </div>
             <div class="fmax-str-content">
-              <span class="fmax-str-num">01 // UV RESISTANCE</span>
-              <strong>Immune to Harsh Indian Sun</strong>
-              <p>Patented double-hardened NT acrylic surface built for extreme tropical UV. Panels will never chalk, peel, crack, or fade—even after 15+ years under 45°C sun exposure.</p>
+              <span class="fmax-str-num">01 // DÉCOR SELECTION</span>
+              <strong>Colours, woods and solids</strong>
+              <p>Compare physical samples at the Rajajinagar experience centre before you commit to an elevation.</p>
             </div>
           </div>
 
@@ -883,12 +741,12 @@
                   <path d="m9 12 2 2 4-4"/>
                 </svg>
               </div>
-              <span class="fmax-card-metric">100% WATERPROOF</span>
+              <span class="fmax-card-metric">VENTILATED</span>
             </div>
             <div class="fmax-str-content">
-              <span class="fmax-str-num">02 // MONSOON RESISTANCE</span>
-              <strong>Zero Swelling, Rotting, or Termites</strong>
-              <p>Non-porous, thermo-cured high-pressure compact core. Completely impervious to torrential monsoon downpours, coastal salinity, rot, and termite damage.</p>
+              <span class="fmax-str-num">02 // VENTILATED BUILD-UP</span>
+              <strong>Organised supporting framework</strong>
+              <p>Rear-ventilated cladding with defined joints, a clean finish, and detailing coordinated to the building.</p>
             </div>
           </div>
 
@@ -896,15 +754,16 @@
             <div class="fmax-card-topbar">
               <div class="fmax-icon-wrap" aria-hidden="true">
                 <svg class="fmax-str-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9h18M9 21V9"/>
                 </svg>
               </div>
-              <span class="fmax-card-metric">−30% INDOOR HEAT</span>
+              <span class="fmax-card-metric">ONE TEAM</span>
             </div>
             <div class="fmax-str-content">
-              <span class="fmax-str-num">03 // THERMAL EFFICIENCY</span>
-              <strong>Natural Chimney Cooling Envelope</strong>
-              <p>Rear-ventilated cavity creates a continuous chimney airflow, flushing solar heat gain upward before it penetrates structural walls, drastically lowering HVAC loads.</p>
+              <span class="fmax-str-num">03 // PROJECT SUPPORT</span>
+              <strong>From drawing to installation</strong>
+              <p>Module planning, fabrication support and professional installation under one Bangalore team.</p>
             </div>
           </div>
 
@@ -920,22 +779,21 @@
             </div>
             <div class="fmax-str-content">
               <span class="fmax-str-num">04 // FACTORY ASSURANCE</span>
-              <strong>Direct Austrian Factory Guarantee</strong>
-              <p>Certified EN 13501-1 Class B-s1, d0 fire retardancy, backed by an official 10-year Fundermax Austrian factory warranty and VTech certified installation.</p>
+              <strong>10-year Fundermax warranty</strong>
+              <p>Genuine panels backed by the Fundermax factory warranty, with local guidance from V-TECH.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- LAYER 4: ARCHITECTURAL PANEL SYSTEMS & ACTION HUB -->
       <div class="fmax-products-section">
         <div class="fmax-products-head">
           <div>
             <p class="chap-label"><span>03.3</span> Architectural systems</p>
-            <h3 class="fmax-products-title">Panel collections &amp; applications.</h3>
+            <h3 class="fmax-products-title">Panel collections and applications.</h3>
           </div>
           <p class="fmax-products-desc">
-            Three specialized architectural palettes: Warm natural woods, non-reflective super-matt monoliths, or bespoke CNC-milled jalis.
+            Woods and solids for elevations, ventilated façade build-ups, and custom screens or balcony infills — selected to the building, not a catalogue claim.
           </p>
         </div>
 
@@ -943,51 +801,51 @@
           <div class="fmax-product-card" data-cursor="hover">
             <div class="fmax-card-header">
               <div class="fmax-card-pretag">
-                <span class="fmax-collection-tag">Exterior 2.3 Essential</span>
-                <span class="fmax-card-usage">For Villas &amp; Residences</span>
+                <span class="fmax-collection-tag">Exterior HPL</span>
+                <span class="fmax-card-usage">For villas and residences</span>
               </div>
-              <h4>Natural Woods &amp; Stone Decors</h4>
+              <h4>Woods, stones and solids</h4>
             </div>
             <div class="fmax-material-bar">
-              <span class="fmax-swatch-chip fmax-swatch-wood" title="Authentic Tyrol Pine"><span>Woodgrain</span></span>
-              <span class="fmax-swatch-chip fmax-swatch-stone" title="Prado Agate"><span>Stone</span></span>
-              <span class="fmax-swatch-chip fmax-swatch-solid" title="Architectural White"><span>Monolith</span></span>
+              <span class="fmax-swatch-chip fmax-swatch-wood"><span>Woodgrain</span></span>
+              <span class="fmax-swatch-chip fmax-swatch-stone"><span>Stone</span></span>
+              <span class="fmax-swatch-chip fmax-swatch-solid"><span>Solid</span></span>
             </div>
-            <p>Authentic Austrian timber decors and architectural stone textures. Delivers the warm, organic look of natural wood with zero maintenance, no termites, and no repainting.</p>
+            <p>Exterior-grade Fundermax décors for contemporary houses and apartment elevations. Review physical samples in Rajajinagar before locking the colourway.</p>
             <ul class="fmax-card-features">
-              <li>Tyrol Pine, Amazon, Barrique Oak &amp; Stones</li>
-              <li>Double-Hardened NT PUR Weather Surface</li>
-              <li>Concealed Modulo or Riveted Substructure</li>
+              <li>Woodgrains, stones and architectural solids</li>
+              <li>Colour coordination for the full elevation</li>
+              <li>Suitable for new-build and renovation</li>
             </ul>
           </div>
 
           <div class="fmax-product-card fmax-card-highlight" data-cursor="hover">
             <div class="fmax-card-header">
               <div class="fmax-card-pretag">
-                <span class="fmax-collection-tag">Exterior Pro 2.3 Stellar</span>
-                <span class="fmax-card-usage">For Commercial Towers</span>
+                <span class="fmax-collection-tag">Ventilated façades</span>
+                <span class="fmax-card-usage">For commercial and residential</span>
               </div>
-              <h4>Non-Reflective Super-Matt</h4>
+              <h4>Organised supporting framework</h4>
             </div>
             <div class="fmax-material-bar">
-              <span class="fmax-swatch-chip fmax-swatch-matt" title="Super-Matt Deep Onyx"><span>Ultra-Matt</span></span>
-              <span class="fmax-swatch-chip fmax-swatch-antiglare" title="Anti-Fingerprint Cosmic"><span>Anti-Glare</span></span>
+              <span class="fmax-swatch-chip fmax-swatch-matt"><span>Cavity</span></span>
+              <span class="fmax-swatch-chip fmax-swatch-antiglare"><span>Joints</span></span>
             </div>
-            <p>Anti-fingerprint, anti-glare architectural finish with an ultra-deep velvety matte texture. Engineered for contemporary facades requiring zero solar reflection.</p>
+            <p>Rear-ventilated cladding with a defined substructure, planned joints and a clean architectural finish coordinated to site conditions.</p>
             <ul class="fmax-card-features">
-              <li>Ultra-Deep Non-Reflective Matte Finish</li>
-              <li>Anti-Fingerprint &amp; Anti-Graffiti Core</li>
-              <li>High Impact, Scratch &amp; Chemical Durability</li>
+              <li>Supporting framework and cavity planning</li>
+              <li>Module and joint coordination</li>
+              <li>Installation by the V-TECH team</li>
             </ul>
           </div>
 
           <div class="fmax-product-card" data-cursor="hover">
             <div class="fmax-card-header">
               <div class="fmax-card-pretag">
-                <span class="fmax-collection-tag">Max Compact Individual</span>
-                <span class="fmax-card-usage">For Balconies &amp; Jalis</span>
+                <span class="fmax-collection-tag">Screens and infills</span>
+                <span class="fmax-card-usage">For balconies and jalis</span>
               </div>
-              <h4>Custom CNC Perforated Screens</h4>
+              <h4>Custom screens and balcony panels</h4>
             </div>
             <div class="fmax-material-bar">
               <div class="fmax-jali-matrix" aria-hidden="true">
@@ -995,40 +853,39 @@
                 <span class="fmax-jali-dot"></span><span class="fmax-jali-dot"></span><span class="fmax-jali-dot"></span><span class="fmax-jali-dot"></span>
                 <span class="fmax-jali-dot"></span><span class="fmax-jali-dot"></span><span class="fmax-jali-dot"></span><span class="fmax-jali-dot"></span>
               </div>
-              <span class="fmax-swatch-chip fmax-swatch-cnc"><span>5-Axis CNC Precision</span></span>
+              <span class="fmax-swatch-chip fmax-swatch-cnc"><span>Patterned screens</span></span>
             </div>
-            <p>Custom digital milling for intricate perforated jali screens, solar shading fins, and privacy balcony infills tailored to your architectural drawings.</p>
+            <p>Patterned façade screens, louvers and balcony infill panels developed around privacy, shading and the building’s design language.</p>
             <ul class="fmax-card-features">
-              <li>Precision Laser &amp; 5-Axis CNC Milling</li>
-              <li>Passive Solar Shading &amp; Daylight Control</li>
-              <li>Concealed Undercut Structural Anchors</li>
+              <li>Custom patterns from architectural drawings</li>
+              <li>Privacy, shading and ventilation</li>
+              <li>Coordinated balcony and railing infills</li>
             </ul>
           </div>
         </div>
 
         <div class="fmax-systems-footer">
-          <a href="systems.html" class="fmax-systems-link" data-cursor="hover">
-            <span>Explore Full Systems &amp; Technical Assemblies on Systems Page</span>
+          <a href="solutions.html#fundermax-applications" class="fmax-systems-link" data-cursor="hover">
+            <span>Explore Fundermax Applications</span>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
 
-        <!-- ACTION & CONVERSION HUB -->
         <div class="fmax-action-hub">
           <div class="fmax-action-info">
             <div class="fmax-hub-status">
               <span class="fmax-live-dot" aria-hidden="true"></span>
-              BENGALURU EXPERIENCE CENTRE · 1:1 SCALE ELEVATION LAB (RAJAJINAGAR)
+              Bengaluru experience centre · Rajajinagar
             </div>
-            <h4>Bring your elevation drawings to our Bengaluru Lab.</h4>
-            <p>Inspect 1:1 scale mockups, test rear-ventilated substructure assemblies, and review physical decor swatches with our facade engineers.</p>
+            <h4>Visit the experience centre to review samples.</h4>
+            <p>Explore façade panels, colours, textures and application possibilities while discussing your project with the V-TECH team.</p>
           </div>
           <div class="fmax-action-btns">
-            <button type="button" class="fmax-spec-btn" id="fmax-spec-add" data-cursor="hover">
-              <span>+</span> Add Swatches to Spec Box
+            <button type="button" class="inquire fmax-consult-btn" data-inquire-open data-category="exterior-hpl" data-source-cta="request-samples" data-inquire-note="I would like to request Fundermax samples and a consultation." data-cursor="hover">
+              Request Samples
             </button>
-            <button type="button" class="inquire fmax-consult-btn" data-inquire-open data-category="exterior-cladding" data-source-cta="partner-fundermax" data-partner="fundermax" data-cursor="hover">
-              Book Elevation Consultation →
+            <button type="button" class="inquire fmax-consult-btn" data-inquire-open data-category="exterior-hpl" data-source-cta="partner-fundermax" data-partner="fundermax" data-cursor="hover">
+              Discuss Your Project
             </button>
           </div>
         </div>
@@ -1036,132 +893,77 @@
     </section>
 
     <section class="pathways" id="pathways">
-      <p class="chap-label reveal-label"><span>04</span> Our areas of expertise</p>
-      <h2 class="reveal-head">One studio. Three specialisms.</h2>
+      <p class="chap-label reveal-label"><span>04</span> Our solutions</p>
+      <h2 class="reveal-head">One Partner for Complete Façade Execution.</h2>
       <div class="doors">
-        <a class="door" href="systems.html" data-cursor="hover">
-          <div class="door-img" style="background-image:url('images/fmax/photos/bodh_villa.png')"></div>
+        <a class="door" href="solutions.html#exterior-hpl" data-cursor="hover">
+          <div class="door-img" style="background-image:url('images/project-05.jpeg')"></div>
           <div class="door-shade" aria-hidden="true"></div>
           <div class="door-top">
             <span class="door-index">01</span>
-            <span class="door-pill">Exterior Envelopes</span>
+            <span class="door-pill">Exterior HPL cladding</span>
           </div>
           <div class="door-copy">
-            <h3>Rear-Ventilated Rainscreens</h3>
-            <p>Austrian Max Exterior cladding with an engineered chimney cavity that reduces heat loads by up to 30%.</p>
+            <h3>Exterior HPL Cladding</h3>
+            <p>Premium exterior-grade HPL cladding for villas, apartments, commercial buildings, institutions and renovation projects.</p>
             <div class="door-meta">
-              <span>Concealed Undercut</span>
+              <span>Ventilated façades</span>
               <span>10-Yr Warranty</span>
             </div>
-            <em>Explore systems →</em>
+            <em>Explore cladding →</em>
           </div>
         </a>
 
-        <a class="door" href="systems.html" data-cursor="hover">
-          <div class="door-img" style="background-image:url('images/fmax/photos/vinpack.png')"></div>
+        <a class="door" href="solutions.html#architectural-glazing" data-cursor="hover">
+          <div class="door-img" style="background-image:url('images/project-01.jpeg')"></div>
           <div class="door-shade" aria-hidden="true"></div>
           <div class="door-top">
             <span class="door-index">02</span>
-            <span class="door-pill">Perforations &amp; Railings</span>
+            <span class="door-pill">Architectural glazing</span>
           </div>
           <div class="door-copy">
-            <h3>CNC Jalis &amp; Balcony Panels</h3>
-            <p>5-axis precision digital milling and ETB-certified fall-protection infills for daylight filtration and privacy.</p>
+            <h3>Architectural Glazing</h3>
+            <p>Custom glass solutions for building elevations, entrances, lobbies, showrooms, offices, canopies and skylights.</p>
             <div class="door-meta">
-              <span>5-Axis CNC Milling</span>
-              <span>ETB Fall-Certified</span>
+              <span>Structural glazing</span>
+              <span>Spider systems</span>
             </div>
-            <em>Explore assemblies →</em>
+            <em>Explore glazing →</em>
           </div>
         </a>
 
-        <a class="door" href="about.html#atelier" data-cursor="hover">
-          <div class="door-img" style="background-image:url('images/project-11.jpeg')"></div>
+        <a class="door" href="solutions.html#cnc-screens" data-cursor="hover">
+          <div class="door-img" style="background-image:url('images/project-04.jpeg')"></div>
           <div class="door-shade" aria-hidden="true"></div>
           <div class="door-top">
             <span class="door-index">03</span>
-            <span class="door-pill">Engineering &amp; Lab</span>
+            <span class="door-pill">Screens and interiors</span>
           </div>
           <div class="door-copy">
-            <h3>Substructures &amp; 1:1 Elevation Lab</h3>
-            <p>Wind-load structural calculation, thermal movement detailing, and full-scale mockup validation in Bengaluru.</p>
+            <h3>CNC Façade Screens</h3>
+            <p>Custom-patterned screens and louvers for privacy, shading and expression — with balcony infills and interior HPL to match.</p>
             <div class="door-meta">
-              <span>Wind-Load Validated</span>
-              <span>Rajajinagar Lab</span>
+              <span>Balcony panels</span>
+              <span>Interior HPL</span>
             </div>
-            <em>Inspect mockups →</em>
+            <em>Explore solutions →</em>
           </div>
         </a>
       </div>
     </section>
 
-    <section class="spectrum" id="spectrum" data-cw-target="a">
-      <p class="chap-label reveal-label"><span>05</span> Open colourway</p>
-      <h2 class="reveal-head">Any colour. Any combination.</h2>
-      <p class="spectrum-lede">We do not lock a project to a stock range. Specify any RAL, NCS, Pantone, mill-match, or a pairing of your own — we engineer the finish across metals, HPL, terracotta, and GFRC.</p>
-
-      <div class="colourway">
-        <div class="cw-elevation" id="cw-elevation" aria-hidden="true">
-          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
-          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
-          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
-          <span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span><span class="cw-slat"></span>
-          <p class="cw-caption">Live pairing on a rainscreen elevation</p>
-        </div>
-
-        <div class="cw-panel">
-          <p class="cw-kicker">Compose a pairing</p>
-          <div class="cw-wells">
-            <label class="cw-well">
-              <span>Primary</span>
-              <input id="cw-a" type="color" value="#8b4a2b" aria-label="Primary colour">
-              <b id="cw-a-hex">#8B4A2B</b>
-            </label>
-            <label class="cw-well">
-              <span>Accent</span>
-              <input id="cw-b" type="color" value="#2f4f55" aria-label="Accent colour">
-              <b id="cw-b-hex">#2F4F55</b>
-            </label>
-          </div>
-
-          <label class="cw-ratio">
-            <span>Mix <em id="cw-ratio-label">62 / 38</em></span>
-            <input id="cw-ratio" type="range" min="35" max="80" value="62" aria-label="Primary to accent mix">
-          </label>
-
-          <div class="cw-hue-wrap">
-            <span>Or tap the spectrum — any hue, then refine the hex</span>
-            <button class="cw-hue" id="cw-hue" type="button" aria-label="Pick a hue from the full spectrum"></button>
-            <span class="cw-hue-hint" id="cw-hue-hint">Applies to primary</span>
-          </div>
-
-          <ul class="cw-standards">
-            <li>RAL</li>
-            <li>NCS</li>
-            <li>Pantone</li>
-            <li>Custom mill</li>
-            <li>Print-to-match</li>
-          </ul>
-
-          <div class="cw-actions">
-            <button class="chip-spec" id="open-spec" type="button" data-cursor="hover">Spec box <b class="spec-count">0</b></button>
-            <button class="cw-hold" id="cw-hold" type="button" data-cursor="hover">Hold this pairing</button>
-            <button class="inquire" id="cw-inquire" type="button" data-inquire-open data-category="exterior-cladding" data-source-cta="spectrum-colourway" data-cursor="hover">Inquire this colourway</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="manifesto" id="circularity">
-      <p class="chap-label reveal-label"><span>06</span> Circularity</p>
+    <section class="manifesto" id="why">
+      <p class="chap-label reveal-label"><span>05</span> Why V-TECH</p>
       <blockquote id="quote">
-        Reducing embodied carbon in the building envelope is one of the most direct levers we have for a sustainable built environment. We are committed to acting on that truth.
+        Designed carefully. Executed responsibly.
       </blockquote>
-      <ul class="metrics">
-        <li><strong data-count="30" data-suffix="%">0%</strong><span>Embodied carbon reduction vs. baseline</span></li>
-        <li><strong data-count="100" data-suffix="%">0%</strong><span>Aluminium recyclable at end of life</span></li>
-        <li><strong data-count="1" data-prefix="A" data-suffix="">A0</strong><span>EN 13501-1 fire classification</span></li>
-        <li><strong data-count="0.78" data-decimals="2" data-suffix="">0</strong><span>W/m²K Passivhaus U-value achieved</span></li>
+      <ul class="metrics metrics-words is-why">
+        <li><strong>Specific</strong><span>Developed around the building’s dimensions and design intent</span></li>
+        <li><strong>Samples</strong><span>Colours and textures at the Rajajinagar centre</span></li>
+        <li><strong>Detail</strong><span>Joints, modules, finishes and installation coordinated</span></li>
+        <li><strong>Finish</strong><span>Alignment, workmanship and site care</span></li>
+        <li><strong>Range</strong><span>Cladding, glazing and architectural surfaces together</span></li>
+        <li><strong>Local</strong><span>Bangalore consultation, site support and aftercare</span></li>
       </ul>
     </section>
 
@@ -1170,23 +972,44 @@
         <div class="photo-blind" style="background-image:url('images/project-11.jpeg')"></div>
       </div>
       <div class="atelier-copy">
-        <p class="chap-label reveal-label"><span>07</span> From the fabrication floor</p>
-        <h2 class="reveal-head">To the world's skylines.</h2>
-        <p class="atelier-p">Skilled fabricators at the milling bench. Full-scale pressure-equalisation chamber testing. BIM-integrated workflows, from design intent to installed panel.</p>
-        <ul class="telemetry">
-          <li><strong data-count="3000" data-suffix="+">0</strong><span>Completed projects</span></li>
-          <li><strong data-count="32">0</strong><span>Countries delivered</span></li>
-          <li><strong data-count="3.8" data-decimals="1" data-suffix="M">0</strong><span>m² of façade installed</span></li>
-          <li><strong data-count="50" data-suffix="-yr">0</strong><span>Design service life</span></li>
+        <p class="chap-label reveal-label"><span>06</span> How we work</p>
+        <h2 class="reveal-head">A Clear Process from Enquiry to Completion.</h2>
+        <p class="atelier-p">V-TECH BUILDING SYSTEMS PVT. LTD. is a Bangalore-based façade and building-products company. We support every project through material selection, design coordination, site measurement, execution and final inspection.</p>
+        <ul class="telemetry telemetry-words">
+          <li><strong>01</strong><span>Consultation</span></li>
+          <li><strong>02</strong><span>Site and drawing review</span></li>
+          <li><strong>03</strong><span>Material selection</span></li>
+          <li><strong>04</strong><span>Design coordination</span></li>
+          <li><strong>05</strong><span>Execution</span></li>
+          <li><strong>06</strong><span>Final inspection</span></li>
         </ul>
       </div>
     </section>
 
+    <section class="home-cta" id="home-cta">
+      <div class="home-cta-stage" aria-hidden="true">
+        <div class="home-cta-grid"></div>
+        <div class="home-cta-glow"></div>
+      </div>
+      <div class="home-cta-inner">
+        <p class="chap-label reveal-label"><span>06.1</span> Project enquiry</p>
+        <div class="home-cta-row">
+          <div class="home-cta-copy">
+            <h2 class="reveal-head">Planning a Façade or Glazing Project?</h2>
+            <p>Share your drawings, elevation references or site photographs with our team. We will help you identify suitable materials and execution options.</p>
+          </div>
+          <div class="home-cta-actions">
+            <button type="button" class="inquire" data-inquire-open data-source-cta="home-cta" data-cursor="hover">Request a Consultation</button>
+            <a class="inquire inquire-ghost" href="https://wa.me/919108042393?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20facade%20or%20glazing%20project." target="_blank" rel="noopener noreferrer" data-cursor="hover">Send Details on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer" id="footer">
     <div class="footer-showreel">
-      <p class="chap-label"><span>08</span> Project showreel</p>
+      <p class="chap-label"><span>07</span> Project showreel</p>
       <div class="film" id="film">
         <video id="film-video" muted loop playsinline autoplay poster="images/project-12.jpeg">
           <source src="videos/demo-facades-video.mp4" type="video/mp4">
@@ -1196,27 +1019,26 @@
     </div>
     <div class="footer-grid">
       <article class="portrait" id="portrait">
-        <span class="portrait-index" aria-hidden="true">09</span>
-        <p>Your Vision, Delivered.</p>
+        <span class="portrait-index" aria-hidden="true">08</span>
+        <p>V-TECH BUILDING SYSTEMS PVT. LTD.</p>
       </article>
       <div class="cols">
         <div>
-          <h4><i>01</i> Practice</h4>
-          <a href="projects.html" data-cursor="hover">Works</a>
-          <a href="about.html" data-cursor="hover">About</a>
+          <h4><i>01</i> Quick links</h4>
+          <a href="projects.html" data-cursor="hover">Projects</a>
+          <a href="solutions.html" data-cursor="hover">Solutions</a>
+          <a href="about.html" data-cursor="hover">About Us</a>
           <a href="contact.html" data-cursor="hover">Contact</a>
         </div>
         <div>
-          <h4><i>02</i> Studio</h4>
-          <a href="about.html#systems" data-cursor="hover">Systems</a>
-          <a href="about.html#atelier" data-cursor="hover">Atelier</a>
-          <a href="#inquire" data-inquire-open data-source-cta="footer" data-cursor="hover">Inquire</a>
+          <h4><i>02</i> Contact</h4>
+          <a href="tel:+919740422863">+91 97404 22863</a>
+          <a href="mailto:vtechbuildingsystems@gmail.com">vtechbuildingsystems@gmail.com</a>
+          <p>Rajajinagar, Bengaluru</p>
         </div>
         <div>
-          <h4><i>03</i> Offices</h4>
-          <p>Bengaluru</p>
-          <p>Rajajinagar</p>
-          <p>South India</p>
+          <h4><i>03</i> Practice</h4>
+          <p>Façade, glazing and architectural cladding solutions for residential, commercial and institutional projects.</p>
         </div>
       </div>
     </div>
@@ -1225,33 +1047,21 @@
       <a href="index.html" class="footer-brand" data-cursor="hover">
         <span class="brand-glyph" aria-hidden="true"></span>
         <span>
-          <span class="brand-name">VTech Facades</span>
+          <span class="brand-name">V-TECH Facades</span>
           <span class="brand-sub">Bengaluru</span>
         </span>
       </a>
       <p class="footer-credit">Managed with love by <a href="https://viralinbound.com" target="_blank" rel="noopener noreferrer" data-cursor="hover">Viral Inbound</a></p>
-      <nav class="footer-meta" aria-label="Studio links">
-        <span>© 2026</span>
-        <a href="about.html" data-cursor="hover">About</a>
-        <a href="#inquire" data-inquire-open data-source-cta="footer" data-cursor="hover">Inquire</a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" data-cursor="hover">LinkedIn</a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" data-cursor="hover">Instagram</a>
+      <nav class="footer-meta" aria-label="Legal">
+        <span>© 2026 V-TECH BUILDING SYSTEMS PVT. LTD. All rights reserved.</span>
+        <a href="about.html" data-cursor="hover">About Us</a>
+        <a href="contact.html" data-cursor="hover">Contact</a>
       </nav>
     </div>
   </footer>
 
-  <aside class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer-head">
-      <h3>Spec box</h3>
-      <button type="button" id="close-spec">Close</button>
-    </div>
-    <ul id="spec-list"></ul>
-  </aside>
-  <div class="backdrop" id="backdrop"></div>
-  <div class="toast" id="toast" role="status"></div>
-
   <nav class="quick-bar" aria-label="Quick contact">
-    <a class="quick-bar-btn is-wa" href="https://wa.me/919108042393?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20facade%20systems." target="_blank" rel="noopener noreferrer" data-cursor="hover">
+    <a class="quick-bar-btn is-wa" href="https://wa.me/919108042393?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20facade%20or%20glazing%20project." target="_blank" rel="noopener noreferrer" data-cursor="hover">
       <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.02Zm-7.01 15.24h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.23 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.24-.75-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.01-.47-.01-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29Z"/></svg>
       <span>WhatsApp</span>
     </a>
@@ -1261,7 +1071,7 @@
     </a>
     <button type="button" class="quick-bar-btn is-inquire" data-inquire-open data-source-cta="quick-bar" data-cursor="hover">
       <svg class="quick-bar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="m4 7.4 8 5.8 8-5.8"/></svg>
-      <span>Inquire</span>
+      <span>Enquiry</span>
     </button>
   </nav>
 
@@ -1269,8 +1079,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="js/supabase-config.js?v=leads1"></script>
-  <script src="js/inquire.js?v=leads3"></script>
-  <script src="app.js?v=colourway1"></script>
-  <script src="js/pwa-register.js?v=pwa3" defer></script>
+  <script src="js/inquire.js?v=honest2"></script>
+  <script src="app.js?v=m1"></script>
+  <script src="js/pwa-register.js?v=pwa5" defer></script>
 </body>
 </html>
