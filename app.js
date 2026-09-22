@@ -324,23 +324,45 @@ function initParallax() {
   const mm = gsap.matchMedia();
 
   mm.add("(prefers-reduced-motion: no-preference)", () => {
-    const aura = section.querySelector(".aura-mark");
-    if (aura) {
-      gsap.fromTo(aura,
-        { xPercent: -50, yPercent: 8 },
-        {
-          xPercent: -50,
-          yPercent: -108,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
-          }
-        }
-      );
-    }
+    const pin = section.querySelector(".aura-pin");
+    const last = rows[rows.length - 1];
+    if (!pin || !last) return;
+
+    let natural = 0;
+    const measure = () => {
+      const prev = pin.style.transform;
+      pin.style.transform = "none";
+      natural = pin.getBoundingClientRect().top - section.getBoundingClientRect().top;
+      pin.style.transform = prev;
+    };
+
+    const stick = () => {
+      const viewPin = window.innerHeight * 0.16;
+      const naturalTop = section.getBoundingClientRect().top + natural;
+      const lastTop = last.getBoundingClientRect().top;
+      const desired = Math.max(naturalTop, Math.min(viewPin, lastTop));
+      pin.style.transform = `translate3d(0, ${desired - naturalTop}px, 0)`;
+    };
+
+    measure();
+    stick();
+
+    const st = ScrollTrigger.create({
+      trigger: section,
+      start: "top bottom",
+      end: "bottom top",
+      invalidateOnRefresh: true,
+      onRefresh: () => {
+        measure();
+        stick();
+      },
+      onUpdate: stick
+    });
+
+    return () => {
+      st.kill();
+      pin.style.transform = "";
+    };
   });
 
   mm.add("(min-width: 961px) and (prefers-reduced-motion: no-preference)", () => {
@@ -781,10 +803,29 @@ function initFilm() {
   const film = document.getElementById("film");
   const btn = document.getElementById("expand-film");
   if (!film || !btn) return;
-  btn.addEventListener("click", () => {
-    const on = film.classList.toggle("is-full");
+
+  const setOpen = (on) => {
+    film.classList.toggle("is-full", on);
     btn.textContent = on ? "Close" : "Expand";
+    btn.setAttribute("aria-expanded", on ? "true" : "false");
+    btn.setAttribute("aria-label", on ? "Close showreel" : "Expand showreel");
+    document.body.classList.toggle("film-lock", on);
     document.body.style.overflow = on ? "hidden" : "";
+    if (on) {
+      film.style.transform = "none";
+      film.style.opacity = "1";
+      document.body.appendChild(btn);
+      window.__lenis?.stop?.();
+      btn.focus();
+    } else {
+      film.appendChild(btn);
+      window.__lenis?.start?.();
+    }
+  };
+
+  btn.addEventListener("click", () => setOpen(!film.classList.contains("is-full")));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && film.classList.contains("is-full")) setOpen(false);
   });
 }
 

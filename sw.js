@@ -1,4 +1,4 @@
-const CACHE_NAME = "vtech-pwa-v12";
+const CACHE_NAME = "vtech-pwa-v18";
 const RUNTIME_NAME = "vtech-runtime-v2";
 const RUNTIME_MAX = 80;
 
@@ -67,6 +67,7 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
   if (url.protocol !== "http:" && url.protocol !== "https:") return;
   if (url.hostname.includes("supabase.co")) return;
+  if (url.hostname.includes("vimeo.com") || url.hostname.includes("vimeocdn.com")) return;
   if (request.destination === "video" || url.pathname.endsWith(".mp4")) return;
 
   if (isNavigation(request)) {
