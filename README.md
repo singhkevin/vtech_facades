@@ -27,26 +27,31 @@ Open http://localhost:8080
 
 Canonical host: `https://vtechfacades.com/`
 
-## Enquire form and leads (Supabase)
+## Enquire form and leads (Privyr)
 
-“Discuss Your Project” and the contact page form share `js/inquire.js`. Submissions call the `submit_lead` Postgres function and land in the `leads` table. Extra fields (location, building type, area) are stored in `message`.
+“Discuss Your Project” and the contact page form share `js/inquire.js`. Submissions POST straight to Privyr’s Incoming Webhook (no Cloudflare / backend). The webhook URL lives in `js/leads-config.js`.
 
-Until the new category slugs are seeded, the form maps each solution to an existing slug (`exterior-cladding`, `balcony-panels`, `interior-hpl`, or `general`).
+Mapped fields: name, email, phone, display_name, notes (location / building / area / message), source (`V-TECH Facades Website`), and `other_fields` (Solution, Source path, Source CTA).
 
-### One-time setup
+### Setup
 
-1. Open [SQL Editor](https://supabase.com/dashboard/project/rrhqipspiiafyffiqvai/sql/new) for the `vtech-facades` project.
-2. Paste and **Run** [`supabase/setup.sql`](supabase/setup.sql), or just [`supabase/migrations/003_solution_categories.sql`](supabase/migrations/003_solution_categories.sql) if tables already exist.
-3. Hard-refresh the site (`Cmd+Shift+R`) so `js/inquire.js?v=honest1` loads.
-4. Send a test enquiry, then open **Table Editor → leads**.
+1. Copy the Incoming Webhook URL from Privyr → Integrations → Incoming Webhook into `js/leads-config.js` as `endpoint` (omit any `#fragment`).
+2. Hard-refresh so `?v=privyr2` scripts load.
+3. Submit a test enquiry on `/contact.html` and confirm the lead in Privyr.
 
-Do not put the `service_role` key in the frontend. The anon key in `js/supabase-config.js` is enough.
+### Local test
 
-### Day-to-day
+```bash
+python3 -m http.server 8080
+```
 
-- New category: insert a row on `categories` (unique `slug`, `label`, `sort_order`).
-- Remove from the form: set `is_active` to false.
-- Leads: filter `leads` by `category_slug` and `status` (`new` → `contacted` → `qualified` → `won` / `lost`).
+Open http://localhost:8080/contact.html — no Worker required.
+
+### Production
+
+Deploy the static site as usual (HTML/CSS/JS). Leads already go to Privyr from the browser; nothing else to host.
+
+**Note:** The webhook path embeds account auth and is visible in page source. Anyone who finds it can POST leads to your Privyr. That matches Privyr’s website-webhook model; rotate the URL in Privyr if it is abused.
 
 ## Motion
 

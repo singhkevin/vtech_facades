@@ -1,14 +1,14 @@
 (() => {
   const SERVICE_OPTIONS = [
-    { slug: "exterior-hpl", label: "Exterior HPL Cladding", fallbackSlug: "exterior-cladding" },
-    { slug: "ventilated-facade", label: "Ventilated Façade", fallbackSlug: "exterior-cladding" },
-    { slug: "architectural-glazing", label: "Architectural Glazing", fallbackSlug: "general" },
-    { slug: "structural-spider-glazing", label: "Structural or Spider Glazing", fallbackSlug: "general" },
-    { slug: "glass-canopy-skylight", label: "Glass Canopy or Skylight", fallbackSlug: "general" },
-    { slug: "cnc-facade-screen", label: "CNC Façade Screen", fallbackSlug: "general" },
-    { slug: "balcony-panel", label: "Balcony Panel", fallbackSlug: "balcony-panels" },
-    { slug: "interior-hpl", label: "Interior HPL", fallbackSlug: "interior-hpl" },
-    { slug: "other-facade", label: "Other Façade Requirement", fallbackSlug: "general" },
+    { slug: "exterior-hpl", label: "Exterior HPL Cladding" },
+    { slug: "ventilated-facade", label: "Ventilated Façade" },
+    { slug: "architectural-glazing", label: "Architectural Glazing" },
+    { slug: "structural-spider-glazing", label: "Structural or Spider Glazing" },
+    { slug: "glass-canopy-skylight", label: "Glass Canopy or Skylight" },
+    { slug: "cnc-facade-screen", label: "CNC Façade Screen" },
+    { slug: "balcony-panel", label: "Balcony Panel" },
+    { slug: "interior-hpl", label: "Interior HPL" },
+    { slug: "other-facade", label: "Other Façade Requirement" },
   ];
 
   const FOCUSABLE =
@@ -19,60 +19,24 @@
   let pendingCategory = "";
   let pendingCta = "header";
   let pendingPartner = "";
-  let serverSlugs = new Set();
 
-  const PUBLIC_SUPABASE = {
-    url: "https://rrhqipspiiafyffiqvai.supabase.co",
-    anonKey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJyaHFpcHNwaWlhZnlmZmlxdmFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg1MTk4MzksImV4cCI6MjEwNDA5NTgzOX0.f3rj2p0goZGoMul1KshlJuSqRtNteGyKDJXbzAqX-5o",
-  };
+  const LEAD_SOURCE = "V-TECH Facades Website";
 
-  function config() {
-    const c = window.VTECH_SUPABASE || {};
-    const url = String(c.url || "").trim();
-    const anonKey = String(c.anonKey || "").trim();
-    if (url && anonKey) return { url, anonKey };
-    return PUBLIC_SUPABASE;
-  }
-
-  function projectUrl() {
-    const raw = (config().url || "").trim().replace(/\/$/, "");
-    return raw.replace(/\/rest\/v1$/i, "");
+  function endpoint() {
+    const c = window.VTECH_LEADS || {};
+    return String(c.endpoint || "")
+      .trim()
+      .split("#")[0]
+      .replace(/\/$/, "");
   }
 
   function configured() {
-    const { url, anonKey } = config();
-    return Boolean(url && anonKey);
+    return Boolean(endpoint());
   }
 
-  function resolveSlug(selected) {
-    const option = SERVICE_OPTIONS.find((item) => item.slug === selected);
-    if (!option) return selected || "general";
-    if (serverSlugs.has(option.slug)) return option.slug;
-    if (serverSlugs.has(option.fallbackSlug)) return option.fallbackSlug;
-    return option.fallbackSlug;
-  }
-
-  async function loadServerSlugs() {
-    if (!configured()) return;
-    const { anonKey } = config();
-    const endpoint =
-      `${projectUrl()}/rest/v1/categories` +
-      `?is_active=eq.true&select=slug,label,sort_order&order=sort_order.asc`;
-    try {
-      const res = await fetch(endpoint, {
-        headers: {
-          apikey: anonKey,
-          Authorization: `Bearer ${anonKey}`,
-        },
-      });
-      if (!res.ok) return;
-      const rows = await res.json();
-      if (!Array.isArray(rows)) return;
-      serverSlugs = new Set(rows.map((row) => row.slug));
-    } catch {
-      serverSlugs = new Set();
-    }
+  function solutionLabel(slug) {
+    const option = SERVICE_OPTIONS.find((item) => item.slug === slug);
+    return option ? option.label : slug.replace(/-/g, " ");
   }
 
   function fillSelect(select, selectedSlug) {
@@ -195,21 +159,22 @@
     });
   }
 
-  function composeMessage(fd, partner) {
-    const solution = SERVICE_OPTIONS.find((item) => item.slug === String(fd.get("category_slug") || "").trim());
+  function composeNotes(fd, partner) {
     const lines = [];
-    if (solution) lines.push(`Required solution: ${solution.label}`);
-    const location = String(fd.get("location") || "").trim();
+    const projectLocation = String(fd.get("location") || "").trim();
     const building = String(fd.get("building_type") || "").trim();
     const area = String(fd.get("area") || "").trim();
-    if (location) lines.push(`Project location: ${location}`);
+    if (projectLocation) lines.push(`Project location: ${projectLocation}`);
     if (building) lines.push(`Building type: ${building}`);
     if (area) lines.push(`Approximate project area: ${area}`);
     const note = String(fd.get("message") || "").trim();
-    if (note) lines.push("", note);
+    if (note) {
+      if (lines.length) lines.push("");
+      lines.push(note);
+    }
     const body = lines.join("\n").trim();
     if (!partner) return body;
-    return `[partner=${partner}] ${body}`.trim();
+    return body ? `[partner=${partner}] ${body}` : `[partner=${partner}]`;
   }
 
   async function onSubmit(event) {
@@ -226,19 +191,13 @@
       return;
     }
 
+    const name = String(fd.get("name") || "").trim();
+    const phone = String(fd.get("phone") || "").trim();
+    const email = String(fd.get("email") || "").trim();
     const selectedSlug = String(fd.get("category_slug") || "").trim();
-    const payload = {
-      name: String(fd.get("name") || "").trim(),
-      phone: String(fd.get("phone") || "").trim(),
-      email: String(fd.get("email") || "").trim(),
-      message: composeMessage(fd, pendingPartner),
-      category_slug: resolveSlug(selectedSlug),
-      company: String(fd.get("company") || "").trim(),
-      source_path: `${location.pathname}${location.search}`,
-      source_cta: cta,
-    };
+    const notes = composeNotes(fd, pendingPartner);
 
-    if (!payload.name || !payload.phone || !payload.email || !selectedSlug) {
+    if (!name || !phone || !email || !selectedSlug) {
       setStatus(root, "Name, phone, email, and required solution are needed.", "err");
       return;
     }
@@ -248,32 +207,33 @@
       return;
     }
 
+    const other_fields = {
+      Solution: solutionLabel(selectedSlug),
+      "Source path": `${location.pathname}${location.search}`,
+      "Source CTA": cta,
+    };
+
+    const payload = {
+      name,
+      email,
+      phone,
+      display_name: name.split(/\s+/)[0] || name,
+      source: LEAD_SOURCE,
+      other_fields,
+    };
+    if (notes) payload.notes = notes;
+
     submit.disabled = true;
     setStatus(root, "Sending…", "pending");
 
-    const { anonKey } = config();
-    const rpcBody = {
-      p_name: payload.name,
-      p_phone: payload.phone,
-      p_email: payload.email,
-      p_category_slug: payload.category_slug,
-      p_message: payload.message || null,
-      p_source_path: payload.source_path || null,
-      p_source_cta: payload.source_cta || null,
-      p_company: payload.company || null,
-    };
     try {
-      const res = await fetch(`${projectUrl()}/rest/v1/rpc/submit_lead`, {
+      const res = await fetch(endpoint(), {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: anonKey,
-          Authorization: `Bearer ${anonKey}`,
-        },
-        body: JSON.stringify(rpcBody),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
       const body = await res.json().catch(() => ({}));
-      const ok = res.ok && (body === true || body?.ok === true || body === '{"ok":true}');
+      const ok = res.ok && (body?.success === true || body?.ok === true || body === true);
       if (ok) {
         form.reset();
         fillAllSelects("");
@@ -281,10 +241,6 @@
         return;
       }
       const detail = body.message || body.error || body.hint;
-      if (res.status === 404) {
-        setStatus(root, "Database is not set up yet. Call us or email the studio directly.", "err");
-        return;
-      }
       setStatus(root, detail || "Could not send the enquiry. Try again or call us.", "err");
     } catch {
       setStatus(root, "Could not send the enquiry. Try again or call us.", "err");
@@ -380,7 +336,6 @@
     bindTriggers();
     bindPageForms();
     fillAllSelects(pendingCategory);
-    loadServerSlugs();
 
     if (location.hash === "#inquire") {
       openDialog({ cta: "hash" });

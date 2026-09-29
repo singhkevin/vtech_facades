@@ -1,4 +1,4 @@
-const CACHE_NAME = "vtech-pwa-v18";
+const CACHE_NAME = "vtech-pwa-v20";
 const RUNTIME_NAME = "vtech-runtime-v2";
 const RUNTIME_MAX = 80;
 
@@ -14,7 +14,7 @@ const PRECACHE = [
   "./app.js",
   "./page.js",
   "./js/inquire.js",
-  "./js/supabase-config.js",
+  "./js/leads-config.js",
   "./js/pwa-register.js",
   "./site.webmanifest",
   "./icons/icon-192.png",
@@ -66,7 +66,7 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(request.url);
   if (url.protocol !== "http:" && url.protocol !== "https:") return;
-  if (url.hostname.includes("supabase.co")) return;
+  if (url.hostname.includes("privyr.com")) return;
   if (url.hostname.includes("vimeo.com") || url.hostname.includes("vimeocdn.com")) return;
   if (request.destination === "video" || url.pathname.endsWith(".mp4")) return;
 
