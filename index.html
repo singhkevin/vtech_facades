@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://player.vimeo.com">
   <link rel="preconnect" href="https://i.vimeocdn.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=m17">
+  <link rel="stylesheet" href="styles.css?v=m18">
   <style>
     .hero-brand-title {
       position: absolute;
@@ -59,6 +59,12 @@
       .slide-copy .hero-secondary { display: none !important; }
       .split-headline { font-size: clamp(28px, 8.4vw, 36px) !important; margin-bottom: 12px; }
       .slide-copy { left: 16px; right: 16px; bottom: calc(58px + 56px); }
+    }
+    @media (max-height: 760px) and (min-width: 961px) {
+      .hero-brand-title {
+        font-size: clamp(18px, 2.2vw, 24px);
+        top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 12px);
+      }
     }
   </style>
   <link rel="preload" as="image" href="images/hero-01-envelopes.png">
