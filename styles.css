@@ -260,8 +260,7 @@ body.nav-open { overflow: hidden; }
 .slide-shade {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(21,35,63,0.42) 0%, rgba(21,35,63,0.1) 32%, rgba(21,35,63,0.32) 62%, rgba(21,35,63,0.78) 100%),
-    linear-gradient(90deg, rgba(21,35,63,0.38) 0%, rgba(21,35,63,0.12) 48%, rgba(21,35,63,0.32) 100%);
+    linear-gradient(180deg, rgba(21,35,63,0.22) 0%, rgba(21,35,63,0.05) 22%, rgba(21,35,63,0.08) 40%, rgba(21,35,63,0.32) 64%, rgba(21,35,63,0.40) 100%);
 }
 .slide-copy {
   position: absolute;
