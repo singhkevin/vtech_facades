@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   wrapHeadlines();
   initNav();
+  if (document.getElementById("hero")) document.body.classList.add("has-hero");
   initHeader();
   initTilt();
   initFilm();
@@ -101,9 +102,21 @@ function initCursor() {
 
 function initHeader() {
   const header = document.getElementById("site-header");
-  const onScroll = () => header.classList.toggle("is-solid", window.scrollY > 40);
+  if (!header) return;
+  const hero = document.getElementById("hero");
+  const onScroll = () => {
+    let solid = window.scrollY > 40;
+    if (hero) {
+      // Pin wraps .hero in .pin-spacer; use that so the bar stays clear through slide scroll.
+      const pinRoot = hero.closest(".pin-spacer") || hero;
+      const headerH = header.offsetHeight || 84;
+      solid = pinRoot.getBoundingClientRect().bottom <= headerH + 16;
+    }
+    header.classList.toggle("is-solid", solid);
+  };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
 }
 
 function initNav() {
