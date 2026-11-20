@@ -260,7 +260,11 @@ body.nav-open { overflow: hidden; }
 .slide-shade {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(21,35,63,0.22) 0%, rgba(21,35,63,0.05) 22%, rgba(21,35,63,0.08) 40%, rgba(21,35,63,0.32) 64%, rgba(21,35,63,0.40) 100%);
+    linear-gradient(180deg, rgba(72, 48, 22, 0.40) 0%, rgba(184, 149, 106, 0.16) 22%, rgba(212, 196, 168, 0.08) 44%, rgba(28, 18, 10, 0.56) 100%),
+    linear-gradient(100deg, rgba(24, 16, 8, 0.58) 0%, rgba(72, 48, 22, 0.34) 26%, rgba(154, 123, 82, 0.22) 48%, rgba(184, 149, 106, 0.10) 68%, rgba(21, 35, 63, 0.16) 100%);
+}
+.hero.is-scroll-story {
+  touch-action: pan-y;
 }
 .slide-copy {
   position: absolute;

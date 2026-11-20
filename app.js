@@ -131,6 +131,7 @@ function initProgress() {
 }
 
 function initHero(animate) {
+  const hero = document.getElementById("hero");
   const slides = [...document.querySelectorAll(".hero-slide")];
   const tabs = [...document.querySelectorAll(".hero-tabs button")];
   const fills = tabs.map((t) => t.querySelector(".fill"));
@@ -142,12 +143,20 @@ function initHero(animate) {
   let timer;
   let busy = false;
   let chromeReady = false;
+  let transition;
+  let storyTrigger;
   const DURATION = 8;
-  const CROSS = 1.2;
+  const CROSS = animate ? 0.7 : 0;
+  const scrollStory = Boolean(animate && hero && slides.length > 1);
 
-  gsap.set(slides, { autoAlpha: 0 });
-  gsap.set(slides[0], { autoAlpha: 1 });
-  slides[0].classList.add("is-active");
+  gsap.set(slides, { autoAlpha: 0, zIndex: 0 });
+  gsap.set(slides[0], { autoAlpha: 1, zIndex: 1 });
+  slides.forEach((slide, idx) => {
+    slide.classList.toggle("is-active", idx === 0);
+    if (idx === 0) return;
+    gsap.set(slide.querySelectorAll(".chap-label, .char, .slide-lead, .hero-actions"), { autoAlpha: 0 });
+  });
+  if (scrollStory) hero.classList.add("is-scroll-story");
 
   const playFill = (idx) => {
     fills.forEach((f) => {
@@ -160,7 +169,20 @@ function initHero(animate) {
     }
   };
 
+  const syncFills = (progress) => {
+    const n = slides.length;
+    const scaled = Math.max(0, Math.min(n, progress * n));
+    fills.forEach((f, idx) => {
+      if (!f) return;
+      let width = 0;
+      if (scaled >= idx + 1) width = 100;
+      else if (scaled > idx) width = (scaled - idx) * 100;
+      gsap.set(f, { width: `${width}%` });
+    });
+  };
+
   const arm = () => {
+    if (scrollStory) return;
     clearTimeout(timer);
     timer = setTimeout(() => show(i + 1), DURATION * 1000);
   };
@@ -196,7 +218,7 @@ function initHero(animate) {
 
     if (img) {
       gsap.fromTo(img, { scale: 1.08 }, {
-        scale: 1.02, duration: DURATION + CROSS, ease: "none", delay
+        scale: 1.02, duration: scrollStory ? 2.4 : DURATION + CROSS, ease: "none", delay
       });
     }
     if (label) {
@@ -228,17 +250,23 @@ function initHero(animate) {
     const actions = slide.querySelector(".hero-actions");
     const tl = gsap.timeline({ defaults: { ease: "power2.in" } });
     if (chars.length) {
-      tl.to(chars, { yPercent: 40, autoAlpha: 0, duration: 0.45, stagger: 0.008 }, 0);
+      tl.to(chars, { yPercent: 40, autoAlpha: 0, duration: 0.35, stagger: 0.006 }, 0);
     }
-    if (label) tl.to(label, { y: -10, autoAlpha: 0, duration: 0.35 }, 0);
-    if (lead) tl.to(lead, { y: 12, autoAlpha: 0, duration: 0.35 }, 0.05);
-    if (actions) tl.to(actions, { y: 10, autoAlpha: 0, duration: 0.3 }, 0.05);
+    if (label) tl.to(label, { y: -10, autoAlpha: 0, duration: 0.28 }, 0);
+    if (lead) tl.to(lead, { y: 12, autoAlpha: 0, duration: 0.28 }, 0.04);
+    if (actions) tl.to(actions, { y: 10, autoAlpha: 0, duration: 0.24 }, 0.04);
     return tl;
   };
 
   const show = (n) => {
-    const next = ((n % slides.length) + slides.length) % slides.length;
-    if (busy || next === i) return;
+    const next = scrollStory
+      ? Math.max(0, Math.min(slides.length - 1, n | 0))
+      : ((n % slides.length) + slides.length) % slides.length;
+    if (next === i) return;
+    if (transition) {
+      transition.kill();
+      transition = null;
+    }
 
     const prev = i;
     busy = true;
@@ -246,11 +274,11 @@ function initHero(animate) {
 
     tabs.forEach((t, idx) => t.classList.toggle("is-on", idx === i));
     slides.forEach((s, idx) => s.classList.toggle("is-active", idx === i));
-    playFill(i);
+    if (!scrollStory) playFill(i);
 
     if (!animate) {
-      gsap.set(slides[prev], { autoAlpha: 0 });
-      gsap.set(slides[i], { autoAlpha: 1 });
+      gsap.set(slides[prev], { autoAlpha: 0, zIndex: 0 });
+      gsap.set(slides[i], { autoAlpha: 1, zIndex: 1 });
       busy = false;
       arm();
       return;
@@ -259,23 +287,46 @@ function initHero(animate) {
     const incoming = slides[i];
     const outgoing = slides[prev];
 
-    const tl = gsap.timeline({
+    slides.forEach((s, idx) => {
+      if (idx !== prev && idx !== i) gsap.set(s, { autoAlpha: 0, zIndex: 0 });
+    });
+
+    transition = gsap.timeline({
       onComplete: () => {
+        gsap.set(outgoing, { autoAlpha: 0, zIndex: 0 });
+        gsap.set(incoming, { zIndex: 1 });
         busy = false;
+        transition = null;
         arm();
       }
     });
 
-    tl.add(exitCopy(outgoing), 0);
-    tl.to(outgoing, { autoAlpha: 0, duration: CROSS, ease: "power2.inOut" }, 0.15);
-    tl.set(incoming, { autoAlpha: 1 }, 0.2);
-    tl.add(() => enterCopy(incoming, 0), 0.35);
+    transition.set(incoming, { autoAlpha: 1, zIndex: 2 }, 0);
+    transition.add(exitCopy(outgoing), 0);
+    transition.to(outgoing, { autoAlpha: 0, duration: CROSS, ease: "power2.inOut" }, 0);
+    transition.add(() => enterCopy(incoming, 0), 0.05);
+  };
+
+  const scrollToSlide = (idx) => {
+    if (!storyTrigger) {
+      show(idx);
+      return;
+    }
+    const n = slides.length;
+    const start = storyTrigger.start;
+    const end = storyTrigger.end;
+    const clamped = Math.max(0, Math.min(n - 1, idx));
+    const target = start + ((clamped + 0.5) / n) * (end - start);
+    if (window.__lenis) {
+      window.__lenis.scrollTo(target, { duration: 0.95, force: true });
+    } else {
+      window.scrollTo({ top: target, behavior: "smooth" });
+    }
   };
 
   tabs.forEach((tab) => tab.addEventListener("click", () => {
-    if (busy) return;
     clearTimeout(timer);
-    show(Number(tab.dataset.i));
+    scrollToSlide(Number(tab.dataset.i));
   }));
 
   if (animate) {
@@ -283,8 +334,32 @@ function initHero(animate) {
     revealChrome();
     enterCopy(slides[0], 1.2);
   }
-  playFill(0);
-  arm();
+
+  if (scrollStory) {
+    syncFills(0);
+    storyTrigger = ScrollTrigger.create({
+      trigger: hero,
+      start: "top top",
+      end: () => {
+        const per = window.matchMedia("(max-width: 640px)").matches ? 0.55 : 0.68;
+        return `+=${Math.round(window.innerHeight * slides.length * per)}`;
+      },
+      pin: true,
+      scrub: 0.4,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const progress = Math.max(0, Math.min(0.9999, self.progress));
+        const idx = Math.min(slides.length - 1, Math.floor(progress * slides.length));
+        syncFills(self.progress);
+        if (idx !== i) show(idx);
+      },
+    });
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+  } else {
+    playFill(0);
+    arm();
+  }
 }
 
 function initHeroParallax() {
