@@ -256,12 +256,14 @@ body.nav-open { overflow: hidden; }
   background-position: center;
   will-change: transform;
   transform: scale(1.06);
+  filter: brightness(1.12) contrast(1.06) saturate(0.92);
 }
 .slide-shade {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(72, 48, 22, 0.40) 0%, rgba(184, 149, 106, 0.16) 22%, rgba(212, 196, 168, 0.08) 44%, rgba(28, 18, 10, 0.56) 100%),
-    linear-gradient(100deg, rgba(24, 16, 8, 0.58) 0%, rgba(72, 48, 22, 0.34) 26%, rgba(154, 123, 82, 0.22) 48%, rgba(184, 149, 106, 0.10) 68%, rgba(21, 35, 63, 0.16) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 30%, transparent 58%, rgba(18, 32, 52, 0.18) 100%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.12) 0%, rgba(210, 228, 242, 0.06) 28%, transparent 55%),
+    radial-gradient(90% 70% at 72% 38%, rgba(255, 255, 255, 0.14) 0%, transparent 52%);
 }
 .hero.is-scroll-story {
   touch-action: pan-y;
@@ -280,17 +282,29 @@ body.nav-open { overflow: hidden; }
 }
 .hero .chap-label,
 .page-hero .chap-label {
-  color: var(--on-photo-accent);
-  text-shadow: 0 1px 2px rgba(21,35,63,0.45);
+  color: rgba(214, 228, 240, 0.95);
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35),
+    0 2px 14px rgba(12, 22, 40, 0.35);
 }
+.hero .chap-label span { color: rgba(186, 208, 228, 0.98); }
 .chap-label span { opacity: 0.85; margin-right: 10px; }
 .split-headline {
   font-family: var(--font-d); font-weight: 500; font-size: clamp(42px, 6.4vw, 88px);
   line-height: 0.98; margin: 0 0 18px; letter-spacing: -0.02em;
-  color: var(--on-photo);
+  color: #fffcf7;
   text-shadow:
-    0 1px 0 rgba(21,35,63,0.28),
-    0 2px 18px rgba(21,35,63,0.35);
+    0 1px 0 rgba(255, 255, 255, 0.28),
+    0 1px 2px rgba(12, 22, 40, 0.35),
+    0 10px 32px rgba(12, 22, 40, 0.28);
+}
+.hero .split-headline {
+  color: #ffffff;
+  text-shadow:
+    0 0 1px rgba(12, 22, 40, 0.45),
+    0 1px 0 rgba(255, 255, 255, 0.35),
+    0 2px 4px rgba(12, 22, 40, 0.28),
+    0 14px 36px rgba(12, 22, 40, 0.34);
 }
 .split-headline .word {
   display: inline-block;
@@ -301,6 +315,12 @@ body.nav-open { overflow: hidden; }
   max-width: 440px; color: var(--on-photo-mute); font-size: 14px; font-weight: 300;
   text-shadow: 0 1px 10px rgba(21,35,63,0.4);
 }
+.hero .slide-lead {
+  color: rgba(244, 248, 252, 0.92);
+  text-shadow:
+    0 1px 0 rgba(12, 22, 40, 0.25),
+    0 6px 18px rgba(12, 22, 40, 0.32);
+}
 
 .hero-badge,
 .hero-tabs {
@@ -310,16 +330,19 @@ body.nav-open { overflow: hidden; }
   position: absolute; right: 36px; top: auto; bottom: 42%;
   z-index: 3;
   display: flex; gap: 10px; align-items: center;
-  border: 1px solid rgba(247,249,252,0.28); padding: 10px 12px;
-  background: rgba(21,35,63,0.32); backdrop-filter: blur(10px);
-  opacity: 0.82;
+  border: 1px solid rgba(255, 255, 255, 0.48); padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.18); backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 28px rgba(18, 28, 48, 0.1);
+  opacity: 0.94;
 }
-.badge-mark { width: 14px; height: 14px; border: 1px solid rgba(247,249,252,0.55); }
+.badge-mark { width: 14px; height: 14px; border: 1px solid rgba(255, 255, 255, 0.7); }
 .hero-badge strong {
-  display: block; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; color: var(--on-photo);
+  display: block; font-size: 11px; letter-spacing: 0.1em; font-weight: 500; color: #fffcf7;
+  text-shadow: 0 1px 8px rgba(12, 22, 40, 0.25);
 }
 .hero-badge em {
-  font-style: normal; font-size: 9px; color: var(--on-photo-mute); letter-spacing: 0.14em;
+  font-style: normal; font-size: 9px; color: rgba(244, 248, 252, 0.82); letter-spacing: 0.14em;
 }
 
 .hero-brand-title {
@@ -334,8 +357,10 @@ body.nav-open { overflow: hidden; }
   font-size: clamp(22px, 3.2vw, 34px);
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--on-photo);
-  text-shadow: 0 1px 14px rgba(21, 35, 63, 0.4);
+  color: #fffcf7;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22),
+    0 8px 24px rgba(12, 22, 40, 0.28);
 }
 
 .works-all {
@@ -367,16 +392,16 @@ body.nav-open { overflow: hidden; }
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;
 }
 .hero-tabs button {
-  background: none; border: 0; color: var(--on-photo-mute); text-align: left;
+  background: none; border: 0; color: rgba(236, 244, 252, 0.72); text-align: left;
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 0 0 8px;
-  border-bottom: 1px solid rgba(247,249,252,0.28); position: relative;
-  text-shadow: 0 1px 8px rgba(21,35,63,0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28); position: relative;
+  text-shadow: 0 1px 10px rgba(12, 22, 40, 0.28);
 }
-.hero-tabs button span { color: var(--on-photo-accent); margin-right: 8px; font-family: var(--font-m); }
+.hero-tabs button span { color: rgba(196, 214, 232, 0.95); margin-right: 8px; font-family: var(--font-m); }
 .hero-tabs .fill {
-  position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: var(--on-photo-accent);
+  position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: rgba(236, 244, 252, 0.95);
 }
-.hero-tabs .is-on { color: var(--on-photo); }
+.hero-tabs .is-on { color: #fffcf7; }
 
 /* Short laptop heights: keep brand title clear of slide copy */
 @media (max-height: 900px) and (min-width: 961px) {
@@ -3652,6 +3677,19 @@ body:has(.film.is-full) .quick-bar {
   background: rgba(21, 35, 63, 0.28);
   color: var(--on-photo);
   backdrop-filter: blur(10px);
+}
+.slide-copy .hero-secondary {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fffcf7;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(18, 28, 48, 0.12);
+}
+.slide-copy .inquire {
+  background: rgba(255, 252, 247, 0.94);
+  border-color: rgba(255, 252, 247, 0.94);
+  box-shadow: 0 12px 28px rgba(18, 28, 48, 0.16);
 }
 .home-cta .inquire-ghost,
 .page-cta .inquire-ghost {
